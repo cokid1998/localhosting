@@ -1,6 +1,7 @@
+import styles from "@/components/Layout/Layout.module.css";
+
 function Layout({ children }) {
-  console.log("asdf");
-  return <div>{children}</div>;
+  return <div className={styles.container}>{children}</div>;
 }
 
 export default Layout;
