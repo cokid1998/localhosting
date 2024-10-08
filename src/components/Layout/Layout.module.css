@@ -1,3 +1,7 @@
 .container {
+  max-width: 768px;
   height: 100svh;
+  margin: 0 auto;
+  border-right: 1px solid #ededed;
+  border-left: 1px solid #ededed;
 }
