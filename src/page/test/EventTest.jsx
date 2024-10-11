@@ -3,23 +3,17 @@ import styles from "@/page/test/EventTest.module.css";
 // http://localhost:5173/event 들어가보세요
 
 function EventTest() {
-  function 첫번째div_onClick이벤트함수() {
-    window.alert("짠");
-    // 이 영역에 div를 클릭했을 때 나오게 하고싶은 action을 적용해보세요
-    // ex) console.log("hello world"); 개발자 도구에 hello world 글자가 찍힘
-  }
-  function 두번째input_onClick이벤트함수(e) {
-    console.log(e.target.value);
-    // 개발자 도구를 열어서 input태그에 글자를 타이핑해보세요
-    // 여기서 파라미터로 받는 e는 뭘까요?
-    // 📚숙제에요.. 알아오세요
-    // 힌트는 커밋제목입니다.
-  }
+  const 첫번째div_onClick이벤트함수 = () => {
+    const currentTime = new Date().toLocaleTimeString();
+    window.alert(`누른 시간: ${currentTime}`);
+  };
 
-  // 자바스크립트에서는 함수를 만드는 방법이 3가지가 있습니다.
-  // 그 중 화살표함수가 있는데요. 요즘에는 거의 화살표함수를 많이 사용합니다.
-  // 위에 이벤트 함수 2개 화살표함수로 바꿔보세요
-  // 숙제입니다..
+  const 두번째input_onClick이벤트함수 = (e) => {
+    console.log(e.target.value);
+
+    // 여기서 파라미터로 받는 e는 뭘까요?
+    // event 객체다. 콘솔 창에 데이터를 입력했을 때 29번째 라인에 있는 onChange 이벤트가 발생해 이벤트 객체를 인자로 받아 콘솔 창에 출력함.
+  };
 
   return (
     <div className={styles.container}>
