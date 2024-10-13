@@ -3,6 +3,7 @@ import Layout from "@/components/Layout/Layout";
 import Test from "@/page/Test";
 import Main from "@/page/Main";
 import Hello from "@/page/Hello";
+import CafeList from "./page/cafeList";
 import EventTest from "@/page/test/EventTest";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/test" element={<Test />} />
         <Route path="/event" element={<EventTest />} />
+        <Route path="/cafeList" element={<CafeList />} />
       </Routes>
     </Layout>
   );
