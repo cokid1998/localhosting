@@ -38,8 +38,12 @@ function CafeList() {
         <div className={styles.title}>전체 카페</div>
       </div>
       <div className={styles.cafeList}>
-        {cafes.map((cafe) => (
-          <div key={cafe.id} className={styles.cafeItem}>
+        {cafes.map((cafe, index) => (
+          <div
+            key={cafe.id}
+            className={styles.cafeItem}
+            style={index === cafes.length - 1 ? { borderBottom: "none" } : {}}
+          >
             <div className={styles.cafeImage}>
               <img src={cafe.image} className={styles.image} />
             </div>
