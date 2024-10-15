@@ -3,6 +3,7 @@ import styles from "@/components/Layout/CafeList.module.css";
 import TestData from "@/page/test/TestData.json";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CafeList() {
   const [cafes, setCafes] = useState([]);
@@ -17,10 +18,18 @@ function CafeList() {
     setCafes(TestData);
   }, []);
 
+  const navigate = useNavigate();
+
+  const navigateToMain = () => {
+    navigate("/Main");
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.navbar}>
-        <div className={styles.backIcon}>&lt;</div>
+        <div className={styles.backIcon} onClick={navigateToMain}>
+          &lt;
+        </div>
         <div className={styles.title}>전체 카페</div>
       </div>
       <div className={styles.cafeList}>
@@ -45,7 +54,3 @@ function CafeList() {
 }
 
 export default CafeList;
-
-// < 누르면 메인페이지로 바뀌도록 해보세요
-// cafeList안에 마지막 cafeItem의 border-bottom은 안나오게 해보세요
-// 잘하셨어요
