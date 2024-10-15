@@ -3,10 +3,8 @@ import styles from "@/components/Layout/CafeList.module.css";
 import TestData from "@/page/test/TestData.json";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
-import Main from "@/page/Main";
 
 function CafeList() {
   const [cafes, setCafes] = useState([]);
@@ -31,18 +29,12 @@ function CafeList() {
     );
   };
 
-  const navigate = useNavigate();
-
-  const goToMain = () => {
-    navigate("/");
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.navbar}>
-        <div onClick={goToMain}>
+        <Link to="/">
           <ChevronLeft size={24} color="black" />
-        </div>
+        </Link>
         <div className={styles.title}>전체 카페</div>
       </div>
       <div className={styles.cafeList}>
