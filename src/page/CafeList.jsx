@@ -42,7 +42,7 @@ function CafeList() {
           <div
             key={cafe.id}
             className={styles.cafeItem}
-            style={index === cafes.length - 1 ? { borderBottom: "none" } : {}}
+            // style={index === cafes.length - 1 ? { borderBottom: "none" } : {}}
           >
             <div className={styles.cafeImage}>
               <img src={cafe.image} className={styles.image} />

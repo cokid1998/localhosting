@@ -25,6 +25,9 @@
 /* 카페 리스트 */
 .cafeList {
   padding: 20px;
+  .cafeItem:last-child {
+    border-bottom: none;
+  }
 }
 
 .cafeItem {
