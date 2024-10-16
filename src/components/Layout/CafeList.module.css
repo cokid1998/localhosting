@@ -28,6 +28,11 @@
   .cafeItem:last-child {
     border-bottom: none;
   }
+  /*
+    스타일과 관련된 코드는 최대한 css의 기능만으로 처리하는게 좋습니다
+    css에는 여러 선택자가있는데 위 선택자 같은 경우는
+    cafeList안에 마지막 cafeItem만 지정하는 선택자입니다.
+   */
 }
 
 .cafeItem {
