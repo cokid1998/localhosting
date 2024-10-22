@@ -4,6 +4,7 @@ import Test from "@/page/Test";
 import Main from "@/page/Main";
 import Hello from "@/page/Hello";
 import EventTest from "@/page/test/EventTest";
+import Mypage from "@/page/Mypage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/test" element={<Test />} />
         <Route path="/event" element={<EventTest />} />
+        <Route path="/mypage" element={<Mypage />} />
       </Routes>
     </Layout>
   );
