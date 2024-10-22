@@ -13,4 +13,8 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: "/src" }],
   },
+  server: {
+    host: true, // 외부 디바이스에서도 접근할 수 있도록 설정
+    port: 5173,
+  },
 });
