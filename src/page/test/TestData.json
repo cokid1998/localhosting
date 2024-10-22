@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Cafe Mocha",
+    "description": "간단한 카페 소개글을 입력하세요.",
+    "temperature": "20.0°C",
+    "distance": "1km",
+    "image": "https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+  },
+  {
+    "id": 2,
+    "name": "Cafe Latte",
+    "description": "간단한 카페 소개글을 입력하세요.",
+    "temperature": "25.0°C",
+    "distance": "2km",
+    "image": "https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+  },
+  {
+    "id": 3,
+    "name": "Espresso House",
+    "description": "간단한 카페 소개글을 입력하세요.",
+    "temperature": "30.0°C",
+    "distance": "0.5km",
+    "image": "https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+  }
+]

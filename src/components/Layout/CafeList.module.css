@@ -1,0 +1,88 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+
+/* 상단 네비바 */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.title {
+  font-size: 18px;
+  text-align: center;
+  flex: 1;
+}
+
+/* 카페 리스트 */
+.cafeList {
+  padding: 20px;
+  .cafeItem:last-child {
+    border-bottom: none;
+  }
+  /*
+    스타일과 관련된 코드는 최대한 css의 기능만으로 처리하는게 좋습니다
+    css에는 여러 선택자가있는데 위 선택자 같은 경우는
+    cafeList안에 마지막 cafeItem만 지정하는 선택자입니다.
+   */
+}
+
+.cafeItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cafeImage {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  background-color: #ccc;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cafeInfo {
+  flex-grow: 1;
+}
+
+.cafeName {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cafeDescription {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.cafeMeta {
+  font-size: 12px;
+  color: #999;
+}
+
+.temperature {
+  color: #ff5a5a;
+  margin-right: 10px;
+}
+
+.distance {
+  color: #666;
+}
