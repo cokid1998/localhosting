@@ -3,7 +3,7 @@ import Layout from "@/components/Layout/Layout";
 import Test from "@/page/Test";
 import Main from "@/page/Main";
 import Hello from "@/page/Hello";
-import CafeList from "@/page/cafeList";
+import CafeList from "@/page/CafeList";
 import EventTest from "@/page/test/EventTest";
 import Join from "@/page/Join";
 import Mypage from "@/page/Mypage";
