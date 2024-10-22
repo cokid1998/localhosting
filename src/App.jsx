@@ -6,6 +6,7 @@ import Hello from "@/page/Hello";
 import CafeList from "@/page/cafeList";
 import EventTest from "@/page/test/EventTest";
 import Join from "@/page/Join";
+import Mypage from "@/page/Mypage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/event" element={<EventTest />} />
         <Route path="/cafeList" element={<CafeList />} />
         <Route path="/join" element={<Join />} />
+        <Route path="/mypage" element={<Mypage />} />
       </Routes>
     </Layout>
   );
