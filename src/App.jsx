@@ -3,8 +3,9 @@ import Layout from "@/components/Layout/Layout";
 import Test from "@/page/Test";
 import Main from "@/page/Main";
 import Hello from "@/page/Hello";
-import CafeList from "./page/cafeList";
+import CafeList from "@/page/cafeList";
 import EventTest from "@/page/test/EventTest";
+import Join from "@/page/Join";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/event" element={<EventTest />} />
         <Route path="/cafeList" element={<CafeList />} />
+        <Route path="/join" element={<Join />} />
       </Routes>
     </Layout>
   );
