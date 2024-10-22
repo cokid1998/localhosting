@@ -50,7 +50,10 @@ const Navbar = () => {
           {TabData.map((item) => {
             let iconColor = curTab === item.title ? "#842800" : "white";
             let text = isCurTab(item.title) && item.title;
-            let bg = isCurTab(item.title) && `data-[state=active]:bg-[#FF7F48]`;
+            let bg =
+              isCurTab(item.title) && item.title === "Coupon"
+                ? "bg-[#FF7F48]"
+                : `data-[state=active]:bg-[#FF7F48]`;
             if (item.title === "Coupon" && !couponOpen) {
               iconColor = "white";
               text = "";
@@ -61,10 +64,12 @@ const Navbar = () => {
                 {item.title === "Coupon" ? (
                   <>
                     <Popover>
-                      <PopoverTrigger>
+                      <PopoverTrigger
+                        className={`w-[96px] h-[38px] rounded-[28px] flex justify-center gap-[6px] ${bg}`}
+                        asChild
+                      >
                         <TabsTrigger
                           value={item.title}
-                          className={`w-[96px] h-[38px] rounded-[28px] flex justify-center gap-[6px] ${bg}`}
                           onMouseDown={handleCouponMouseDown}
                         >
                           {React.cloneElement(item.icon, { color: iconColor })}
@@ -73,7 +78,10 @@ const Navbar = () => {
                           </div>
                         </TabsTrigger>
                       </PopoverTrigger>
-                      <PopoverContent className="bg-transparent p-0 w-fit border-none shadow-none relative bottom-[10px]">
+                      <PopoverContent
+                        onOpenAutoFocus={(e) => e.preventDefault()}
+                        className="bg-transparent p-0 w-fit border-none shadow-none relative bottom-[10px]"
+                      >
                         <CouponModal />
                       </PopoverContent>
                     </Popover>
@@ -99,5 +107,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// modal의 바깥을 클릭해도 모달이 닫히게

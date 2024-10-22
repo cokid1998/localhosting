@@ -46,9 +46,9 @@ function CouponModal() {
           <span className="mr-[17px]">
             사장님 고유 핀 번호를 입력해 주세요!
           </span>
-          <button className="w-[52px] h-[32px] bg-[#FF7F48] rounded-[28px] flex justify-center items-center">
+          <div className="w-[52px] h-[32px] bg-[#FF7F48] rounded-[28px] flex justify-center items-center">
             <CheckCheck color="#842800" />
-          </button>
+          </div>
         </div>
       </div>
 
