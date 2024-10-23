@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import Footprint from "@/assets/svg/Main/Footprint.svg";
+import UpAndCircle from "@/assets/svg/Main/UpAndCircle.svg";
 import { Footprints } from "lucide-react";
 
 function Main() {
@@ -51,24 +51,80 @@ function Main() {
           </div>
         </Carousel>
 
-        <div className="flex flex-col px-[15px]">
+        <div className="flex flex-col px-[15px] overflow-scroll mb-[40px]">
           <h2 className="font-bold text-[24px] mb-[24px]">
             지금 많이 찾는 카페
           </h2>
 
           <div className="flex gap-[15px]">
-            <div className="flex flex-col items-center relative">
-              <Footprints
-                size="62px"
-                color="#000000"
-                fill="#ff7f48"
-                strokeWidth="1"
-                className="top-[-24px] right-[12px] absolute -rotate-[11deg]"
-              />
-              <div className="w-[156px] pl-[16px] py-[10px] bg-black text-white font-bold text-[17px] rounded-t-[10px]">
-                거리순
+            <div className="flex flex-col">
+              <div className="flex flex-col items-center">
+                <div className="w-[156px] pl-[16px] py-[10px] bg-black text-white font-bold text-[17px] rounded-t-[10px] relative">
+                  거리순
+                  <Footprints
+                    size="62px"
+                    color="#000000"
+                    fill="#ff7f48"
+                    strokeWidth="0.7"
+                    className="absolute -top-[24px] right-[8px] -rotate-[11deg]"
+                  />
+                </div>
+                <div className="-top-[10px] relative bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px] [clip-path:polygon(0_4%,100%_0,100%_100%,0%_100%)]"></div>
               </div>
-              <div className="-top-[10px] relative bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px]"></div>
+              <h3 className="ml-[4px] font-semibold">카페이름</h3>
+            </div>
+
+            <div className="flex flex-col">
+              <div className="flex flex-col items-center">
+                <div className="w-[156px] pl-[16px] py-[10px] bg-black text-white font-bold text-[17px] rounded-t-[10px] relative">
+                  판매량
+                  <UpAndCircle className="absolute right-[8px] -top-[22px]" />
+                </div>
+                <div className="-top-[10px] relative bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px] [clip-path:polygon(0_4%,100%_0,100%_100%,0%_100%)]"></div>
+              </div>
+              <h3 className="ml-[4px] font-semibold">카페이름</h3>
+            </div>
+
+            <div className="flex flex-col">
+              <div className="flex flex-col items-center">
+                <div className="w-[156px] pl-[16px] py-[10px] bg-black text-white font-bold text-[17px] rounded-t-[10px] relative">
+                  판매량
+                  <UpAndCircle className="absolute right-[8px] -top-[22px]" />
+                </div>
+                <div className="-top-[10px] relative bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px] [clip-path:polygon(0_4%,100%_0,100%_100%,0%_100%)]"></div>
+              </div>
+              <h3 className="ml-[4px] font-semibold">카페이름</h3>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col px-[15px] mb-[80px]">
+          <h2 className="font-bold text-[24px] mb-[24px]">등록된 전체 카페</h2>
+
+          <div className="flex gap-[15px] overflow-scroll">
+            <div className="flex flex-col gap-[12px]">
+              <div className="bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px]"></div>
+              <h3 className="ml-[4px] font-semibold">카페이름</h3>
+            </div>
+
+            <div className="flex flex-col gap-[12px]">
+              <div className="bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px]"></div>
+              <h3 className="ml-[4px] font-semibold">카페이름</h3>
+            </div>
+
+            <div className="flex flex-col gap-[12px]">
+              <div className="bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px]"></div>
+              <h3 className="ml-[4px] font-semibold">카페이름</h3>
+            </div>
+
+            <div className="flex flex-col gap-[12px]">
+              <div className="bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px]"></div>
+              <h3 className="ml-[4px] font-semibold">카페이름</h3>
+            </div>
+
+            <div className="flex flex-col gap-[12px]">
+              <div className="bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px]"></div>
+              <h3 className="ml-[4px] font-semibold">카페이름</h3>
             </div>
           </div>
         </div>
@@ -79,4 +135,5 @@ function Main() {
 
 export default Main;
 
-// Todo: 위쪽만 사선으로
+// Todo: clip-path부분 rounded처리
+// scroll되면 "지금 많이 찾는 카페 쪽은 스크롤 안되게"
