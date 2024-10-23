@@ -59,9 +59,6 @@
 @layer base {
   * {
     @apply border-border;
-    /* 스크롤바 숨기기 */
-    -ms-overflow-style: none; /* for Internet Explorer and Edge */
-    scrollbar-width: none; /* for Firefox */
   }
   body {
     @apply bg-background text-foreground;
