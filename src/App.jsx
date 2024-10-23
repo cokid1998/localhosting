@@ -7,6 +7,9 @@ import CafeList from "@/page/CafeList";
 import EventTest from "@/page/test/EventTest";
 import Join from "@/page/Join";
 import Mypage from "@/page/Mypage";
+import DistanceCafeList from "@/page/DistanceCafeList";
+import Rank from "@/components/Main/Rank";
+import CafeDetail from "@/page/CafeDetail";
 
 function App() {
   return (
@@ -16,8 +19,11 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/event" element={<EventTest />} />
         <Route path="/cafeList" element={<CafeList />} />
+        <Route path="/cafe/:id" element={<CafeDetail />} />
         <Route path="/join" element={<Join />} />
         <Route path="/mypage" element={<Mypage />} />
+        <Route path="/distance" element={<DistanceCafeList />} />
+        <Route path="/rank" element={<Rank />} />
       </Routes>
     </Layout>
   );
