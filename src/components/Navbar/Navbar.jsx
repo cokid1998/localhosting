@@ -107,3 +107,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// 쿠폰 모달 띄워진 상태에서 밖 영역을 클릭해서 모달을 없앴을 때 쿠폰 버튼 스타일 수정

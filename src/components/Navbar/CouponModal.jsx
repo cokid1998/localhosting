@@ -9,7 +9,7 @@ import {
 import { CheckCheck } from "lucide-react";
 
 function CouponModal() {
-  const [value, setValue] = useState("");
+  const [OTP, setOTP] = useState("");
 
   return (
     <div>
@@ -25,11 +25,7 @@ function CouponModal() {
 
           <div className="text-[14px] font-semibold">아메리카노 ICED</div>
 
-          <InputOTP
-            value={value}
-            onChange={(value) => setValue(value)}
-            maxLength={4}
-          >
+          <InputOTP value={OTP} onChange={(OTP) => setOTP(OTP)} maxLength={4}>
             <InputOTPGroup className="flex gap-[26px]">
               {[0, 1, 2, 3].map((index) => (
                 <InputOTPSlot
