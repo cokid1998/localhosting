@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* font-family: ; */
+}
+
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.loginContainer {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.loginImage img {
+  width: 150px;
+  margin-bottom: 20px;
+  align-content: center;
+}
+
+.loginOptions {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.loginOption {
+  background: none;
+  border: none;
+  color: #525252;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.loginOption:hover {
+  color: #333;
+}
+
+.loginInput {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  color: #d9d9d9;
+  /* border: 1px solid #ddd;
+  border-radius: 6px; */
+  font-size: 14px;
+  border-bottom: 1px solid#D9D9D9;
+  outline: none;
+}
+
+.loginInput:focus {
+  border-bottom: 1px solid#333;
+}
+
+.loginButton {
+  width: 70%;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.loginLinks {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16px;
+}
+
+.loginLinks a {
+  color: #888;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.loginLinks a:hover {
+  color: #333;
+}
+
+/* 아이디 및 패스워드 찾기 사이 여백 줄이기? 방법 */
+/* 이미지 배치 가운데 정렬... */
