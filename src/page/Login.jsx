@@ -7,6 +7,19 @@ function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const [generalIconColor, setGeneralIconColor] = useState("#D9D9D9");
+  const [businessIconColor, setBusinessIconColor] = useState("#D9D9D9");
+
+  const handleGeneralClick = () => {
+    setGeneralIconColor("#FF7F48");
+    setBusinessIconColor("#D9D9D9");
+  }
+
+  const handleBusinessClick = () => {
+    setGeneralIconColor("#D9D9D9");
+    setBusinessIconColor("#FF7F48");
+  }
+
   const handleLogin = () => {
     console.log("ID: ", username);
     console.log("PassWord: ", password);
@@ -23,11 +36,11 @@ function LoginPage() {
           className={styles.image}
         />
         <div className={styles.loginOptions}>
-          <button className={styles.loginOption}>
-            <Coffee className={styles.icon} /> 일반 회원 로그인
+          <button className={styles.loginOption} onClick={handleGeneralClick}>
+            <Coffee style={{color: generalIconColor}} className={styles.icon} /> 일반 회원 로그인
           </button>
-          <button className={styles.loginOption}>
-            <Coffee className={styles.icon} /> 사장님 로그인
+          <button className={styles.loginOption} onClick={handleBusinessClick}>
+            <Coffee style={{color: businessIconColor}} className={styles.icon} /> 사장님 로그인
           </button>
         </div>
         <input
