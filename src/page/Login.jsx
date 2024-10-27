@@ -1,41 +1,52 @@
-// import React from "react";
 import styles from "@/components/Layout/Login.module.css";
-// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import coffeeIcon from "@/assets/svg/Login/coffeeIcon.svg";
+import { Coffee } from "lucide-react/";
+import { useState } from "react";
 
 function LoginPage() {
-  // const Router = () => {
-  //   return (
-  //     <BrowserRouter>
-  //       <Routes>
-  //         <Route path="/" element={<Main />} />
-  //       </Routes>
-  //     </BrowserRouter>
-  //   );
-  // };
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    console.log("ID: ", username);
+    console.log("PassWord: ", password);
+  };
 
   return (
     <div className={styles.loginPage}>
       <div className={styles.loginContainer}>
         <h1 className={styles.title}>어서오세요!</h1>
         <p className={styles.description}>좋아하는 카페를 구독해 보세요.</p>
-        <div className={styles.loginImage}>
-          <img src="" alt="커피 구독 일러스트레이션" />
-        </div>
+        <img
+          src={coffeeIcon}
+          alt="커피 구독 일러스트레이션"
+          className={styles.image}
+        />
         <div className={styles.loginOptions}>
-          <button className={styles.loginOption}>일반 회원 로그인</button>
-          <button className={styles.loginOption}>사장님 로그인</button>
+          <button className={styles.loginOption}>
+            <Coffee className={styles.icon} /> 일반 회원 로그인
+          </button>
+          <button className={styles.loginOption}>
+            <Coffee className={styles.icon} /> 사장님 로그인
+          </button>
         </div>
         <input
           type="text"
           placeholder="아이디를 입력해 주세요"
           className={styles.loginInput}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="password"
           placeholder="비밀번호를 입력해 주세요"
           className={styles.loginInput}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <button className={styles.loginButton}>로그인</button>
+        <button className={styles.loginButton} onClick={handleLogin}>
+          로그인
+        </button>
         <div className={styles.loginLinks}>
           <a href="#">아이디 찾기</a>
           <a href="#">패스워드 찾기</a>
