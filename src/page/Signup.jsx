@@ -3,6 +3,8 @@ import styles from "@/components/Layout/Signup.module.css";
 import { Link } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
+import customerImage from "@/components/img/고객님.png";
+import ownerImage from "@/components/img/사장님.png";
 
 function ThreeDot() {
   return (
@@ -98,7 +100,7 @@ function Signup() {
           type="고객님"
           title="일반 회원"
           description="구독권을 구매를 원하시는"
-          image="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+          image={customerImage}
           onClick={() => handleSelection("customer")}
           selected={selectedType === "customer"}
         />
@@ -106,7 +108,7 @@ function Signup() {
           type="사장님"
           title="사장님 회원"
           description="카페를 운영중이신"
-          image="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+          image={ownerImage}
           onClick={() => handleSelection("owner")}
           selected={selectedType === "owner"}
         />
