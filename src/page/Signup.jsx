@@ -21,11 +21,13 @@ function Signup() {
 
   const handleSelection = (type) => {
     setSelectedType(type);
-    setCurrentStep(type === "customer" ? 2 : 3);
+    setCurrentStep(1);
   };
 
   const handleNext = () => {
-    if (currentStep < 3) {
+    if (selectedType === "customer" && currentStep < 2) {
+      setCurrentStep(currentStep + 1);
+    } else if (selectedType === "owner" && currentStep < 3) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -76,13 +78,19 @@ function Signup() {
         >
           2
         </div>
-        <ThreeDot />
-        <div
-          className={`${styles.step} ${currentStep >= 3 ? styles.active : ""}`}
-          onClick={() => setCurrentStep(3)}
-        >
-          3
-        </div>
+        {selectedType === "owner" && (
+          <>
+            <ThreeDot />
+            <div
+              className={`${styles.step} ${
+                currentStep >= 3 ? styles.active : ""
+              }`}
+              onClick={() => setCurrentStep(3)}
+            >
+              3
+            </div>
+          </>
+        )}
       </div>
       <div className={styles.chooseMsg}>회원타입을 선택해주세요</div>
       <div className={styles.UserSelection}>
@@ -91,7 +99,7 @@ function Signup() {
           title="일반 회원"
           description="구독권을 구매를 원하시는"
           image="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
-          onClick={() => setSelectedType("customer")}
+          onClick={() => handleSelection("customer")}
           selected={selectedType === "customer"}
         />
         <UserCard
@@ -99,7 +107,7 @@ function Signup() {
           title="사장님 회원"
           description="카페를 운영중이신"
           image="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
-          onClick={() => setSelectedType("owner")}
+          onClick={() => handleSelection("owner")}
           selected={selectedType === "owner"}
         />
       </div>
@@ -111,7 +119,5 @@ function Signup() {
 }
 
 export default Signup;
-
-// 태그안에 내용이없다면 바로 닫아도 됩니다. <div></div> == <div/> Dog태그 모두 이렇게 바꾸세요
 
 // Step이 1이 아닐 때는 이전 버튼도 나오게 만들어보세요 아직 디자인이 안된거 같지만 있어야하는 기능이에요. 일단 디자인은 신경쓰지말고 만들어보세요
