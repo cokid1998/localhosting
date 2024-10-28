@@ -30,6 +30,29 @@ function Signup() {
     }
   };
 
+  const UserCard = ({ type, title, description, image, onClick, selected }) => {
+    return (
+      <div className={styles.cardContainer} onClick={onClick}>
+        <div
+          className={`${styles.cardHeader} ${
+            selected ? styles.headerSelected : ""
+          }`}
+        >
+          {title}
+        </div>
+        <div
+          className={`${styles.cardContent} ${selected ? styles.selected : ""}`}
+        >
+          <img src={image} className={styles.cardImage} />
+          <div className={styles.cardText}>
+            <p className={styles.cardTextDescription}>{description}</p>
+            <p className={styles.cardTextType}>{type}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.navbar}>
@@ -62,6 +85,24 @@ function Signup() {
         </div>
       </div>
       <div className={styles.chooseMsg}>회원타입을 선택해주세요</div>
+      <div className={styles.UserSelection}>
+        <UserCard
+          type="고객님"
+          title="일반 회원"
+          description="구독권을 구매를 원하시는"
+          image="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+          onClick={() => setSelectedType("customer")}
+          selected={selectedType === "customer"}
+        />
+        <UserCard
+          type="사장님"
+          title="사장님 회원"
+          description="카페를 운영중이신"
+          image="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+          onClick={() => setSelectedType("owner")}
+          selected={selectedType === "owner"}
+        />
+      </div>
       <button className={styles.nextBtn} onClick={handleNext}>
         다음
       </button>
