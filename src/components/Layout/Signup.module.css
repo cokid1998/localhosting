@@ -1,0 +1,159 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 상단 네비바 */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0px 59px 9px;
+}
+
+.title {
+  font-size: 16px;
+  text-align: center;
+  flex: 1;
+  padding-right: 24px;
+}
+
+/* 단계 표시 */
+
+.stepLevel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 39px;
+}
+
+.step {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  background-color: #d9d9d9;
+  color: white;
+  margin: 0 10px;
+}
+
+.step.active {
+  background-color: #ff7f48;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  margin: 0 5px;
+}
+
+/* 선택 메시지 */
+.chooseMsg {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* 회원타입 선택 */
+.cardContainer {
+  height: 142px;
+  width: 312px;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 3em;
+}
+
+.cardHeader {
+  width: 300px;
+  background-color: #d9d9d9;
+  color: #828282;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: left;
+  margin-left: 6px;
+  /* 추가 */
+  position: relative;
+  bottom: -1px;
+}
+
+.headerSelected {
+  background-color: #ff7f48;
+  color: black;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+
+  /* 수정사항 */
+  gap: 40px;
+}
+
+.cardImage {
+  width: 60px;
+  height: 80px;
+  /*
+  위에서 gap으로 간격줘서 margin-right제거
+  margin-right: 20px;
+  margin-left 추가
+  */
+  margin-left: 20px;
+}
+
+.cardText {
+  text-align: left;
+}
+
+.cardTextDescription {
+  color: #828282;
+  font-size: 16px;
+}
+
+.cardTextType {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.selected {
+  border: 2px solid #ff7f48;
+}
+
+.UserSelection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 다음 버튼 */
+
+.nextBtn {
+  width: 267px;
+  height: 49px;
+  background-color: black;
+  color: white;
+  border-radius: 28px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

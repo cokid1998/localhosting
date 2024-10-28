@@ -1,8 +1,6 @@
 .container {
   width: 100%;
-  max-width: 600px;
   margin: 0 auto;
-  background-color: #f9f9f9;
 }
 
 /* 상단 네비바 */
@@ -11,42 +9,34 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  padding: 16px 0px 15px 9px;
+  border-bottom: 2px solid #d9d9d9;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   flex: 1;
+  padding-right: 24px;
 }
 
 /* 카페 리스트 */
 .cafeList {
-  padding: 20px;
-  .cafeItem:last-child {
-    border-bottom: none;
-  }
-  /*
-    스타일과 관련된 코드는 최대한 css의 기능만으로 처리하는게 좋습니다
-    css에는 여러 선택자가있는데 위 선택자 같은 경우는
-    cafeList안에 마지막 cafeItem만 지정하는 선택자입니다.
-   */
+  padding: 22px;
 }
 
 .cafeItem {
   display: flex;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
 }
 
 .cafeImage {
-  width: 80px;
-  height: 80px;
+  width: 95px;
+  height: 95px;
   overflow: hidden;
-  background-color: #ccc;
+  background-color: #d9d9d9;
   border-radius: 10px;
   margin-right: 15px;
 }
@@ -62,27 +52,27 @@
 }
 
 .cafeName {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
+  color: #0f0f0f;
 }
 
 .cafeDescription {
   font-size: 14px;
-  color: #666;
-  margin-bottom: 8px;
+  color: #757575;
+  margin-bottom: 5px;
 }
 
 .cafeMeta {
   font-size: 12px;
-  color: #999;
 }
 
 .temperature {
-  color: #ff5a5a;
+  color: #ff7f48;
   margin-right: 10px;
 }
 
 .distance {
-  color: #666;
+  color: #757575;
 }
