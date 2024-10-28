@@ -1,5 +1,5 @@
 import styles from "@/components/Layout/Login.module.css";
-import coffeeIcon from "@/assets/svg/Login/coffeeIcon.svg?url";
+import coffeeIcon from "@/assets/svg/Login/coffeeIcon.png";
 import { Coffee } from "lucide-react/";
 import { useState } from "react";
 
@@ -131,7 +131,7 @@ export default LoginPage;
         이런경우 관련된 이벤트함수도 여러개 만들어줘야하고 장기적으로 코드 유지/보수를 어렵게 만듭니다.
         상태값을 1개로 줄여주세요 
   😉Hint: 상태값은 색이 아니라 현재 사용자가 뭘 클릭한 상태인지를 나타내는 상태값으로 만들어보세요
-  ▶️ 네!!
+  ▶️ 네!! 감사합니당
 
   - css와 관련된 코드는 최대한 분산되지 않게
     ⮑  현재 <Coffee />라는 컴포넌트에 css를 입히는 곳은 className과 style입니다.
