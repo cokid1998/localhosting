@@ -1,23 +1,15 @@
 import styles from "@/components/Layout/Login.module.css";
-import coffeeIcon from "@/assets/svg/Login/coffeeIcon.svg";
+import coffeeIcon from "@/assets/svg/Login/coffeeIcon.svg?url";
 import { Coffee } from "lucide-react/";
 import { useState } from "react";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [activeOption, setActiveOption] = useState("none");
 
-  const [generalIconColor, setGeneralIconColor] = useState("#D9D9D9");
-  const [businessIconColor, setBusinessIconColor] = useState("#D9D9D9");
-
-  const handleGeneralClick = () => {
-    setGeneralIconColor("#FF7F48");
-    setBusinessIconColor("#D9D9D9");
-  };
-
-  const handleBusinessClick = () => {
-    setGeneralIconColor("#D9D9D9");
-    setBusinessIconColor("#FF7F48");
+  const handleOptionClick = (option) => {
+    setActiveOption(option);
   };
 
   const handleLogin = () => {
@@ -36,17 +28,29 @@ function LoginPage() {
           className={styles.image}
         />
         <div className={styles.loginOptions}>
-          <button className={styles.loginOption} onClick={handleGeneralClick}>
+          <button
+            className={styles.loginOption}
+            onClick={() => handleOptionClick("general")}
+          >
             <Coffee
-              style={{ color: generalIconColor }}
-              className={styles.icon}
+              className={
+                activeOption === "general"
+                  ? styles.iconActive
+                  : styles.iconInactive
+              }
             />{" "}
             일반 회원 로그인
           </button>
-          <button className={styles.loginOption} onClick={handleBusinessClick}>
+          <button
+            className={styles.loginOption}
+            onClick={() => handleOptionClick("business")}
+          >
             <Coffee
-              style={{ color: businessIconColor }}
-              className={styles.icon}
+              className={
+                activeOption === "business"
+                  ? styles.iconActive
+                  : styles.iconInactive
+              }
             />{" "}
             사장님 로그인
           </button>
@@ -125,12 +129,14 @@ export default LoginPage;
   - 스타일링을 위한 상태값을 2개가 아니라 1개로 처리할 수 있음
     ⮑  현재 스타일링을 위해서 상태값을 2개 사용하고 있습니다.
         이런경우 관련된 이벤트함수도 여러개 만들어줘야하고 장기적으로 코드 유지/보수를 어렵게 만듭니다.
-        상태값을 1개로 줄여주세요
+        상태값을 1개로 줄여주세요 
   😉Hint: 상태값은 색이 아니라 현재 사용자가 뭘 클릭한 상태인지를 나타내는 상태값으로 만들어보세요
+  ▶️ 네!!
 
   - css와 관련된 코드는 최대한 분산되지 않게
     ⮑  현재 <Coffee />라는 컴포넌트에 css를 입히는 곳은 className과 style입니다.
         css는 최대한 한곳에서 적용시키고 한곳에서 관리하는게 좋습니다.
         style을 쓰지말고 구현해보세요
   😉Hint: css파일에 클릭했을 때/클릭 안 했을 때 class를 각각 만들고 삼항연산자를 사용해보세요.
+  ▶️ 바꿔 봤습니다!
 */
