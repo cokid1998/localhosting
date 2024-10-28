@@ -11,6 +11,8 @@ import DistanceCafeList from "@/page/DistanceCafeList";
 import Rank from "@/components/Main/Rank";
 import CafeDetail from "@/page/CafeDetail";
 import Login from "@/page/Login";
+import FindId from "@/page/FindId";
+import FindPw from "@/page/FindPw";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/distance" element={<DistanceCafeList />} />
         <Route path="/rank" element={<Rank />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/find-id" element={<FindId />} />
+        <Route path="/find-password" element={<FindPw />} />
       </Routes>
     </Layout>
   );

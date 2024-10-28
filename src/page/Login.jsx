@@ -2,11 +2,12 @@ import styles from "@/components/Layout/Login.module.css";
 import coffeeIcon from "@/assets/svg/Login/coffeeIcon.png";
 import { Coffee } from "lucide-react/";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [activeOption, setActiveOption] = useState("none");
+  const [activeOption, setActiveOption] = useState("null");
 
   const handleOptionClick = (option) => {
     setActiveOption(option);
@@ -73,8 +74,8 @@ function LoginPage() {
           로그인
         </button>
         <div className={styles.loginLinks}>
-          <a href="#">아이디 찾기</a>
-          <a href="#">패스워드 찾기</a>
+          <Link to="/Find-id">아이디 찾기</Link>
+          <Link to="/Find-password">패스워드 찾기</Link>
         </div>
       </div>
     </div>
