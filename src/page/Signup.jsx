@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/components/Layout/Join.module.css";
+import styles from "@/components/Layout/Signup.module.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
@@ -77,9 +77,9 @@ function Join() {
         </div>
       </div>
       <div className={styles.chooseMsg}>회원타입을 선택해주세요</div>
-      <div className={styles.nextBtn} onClick={handleNext}>
+      <button className={styles.nextBtn} onClick={handleNext}>
         다음
-      </div>
+      </button>
     </div>
   );
 }
