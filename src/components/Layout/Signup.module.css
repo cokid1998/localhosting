@@ -81,6 +81,9 @@
   border-top-right-radius: 10px;
   text-align: left;
   margin-left: 6px;
+  /* 추가 */
+  position: relative;
+  bottom: -1px;
 }
 
 .headerSelected {
@@ -96,12 +99,20 @@
   padding: 10px;
   border: 2px solid #d9d9d9;
   border-radius: 10px;
+
+  /* 수정사항 */
+  gap: 40px;
 }
 
 .cardImage {
   width: 60px;
   height: 80px;
+  /*
+  위에서 gap으로 간격줘서 margin-right제거
   margin-right: 20px;
+  margin-left 추가
+  */
+  margin-left: 20px;
 }
 
 .cardText {
