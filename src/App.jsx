@@ -7,6 +7,12 @@ import CafeList from "@/page/CafeList";
 import EventTest from "@/page/test/EventTest";
 import Signup from "@/page/Signup";
 import Mypage from "@/page/Mypage";
+import DistanceCafeList from "@/page/DistanceCafeList";
+import Rank from "@/components/Main/Rank";
+import CafeDetail from "@/page/CafeDetail";
+import Login from "@/page/Login";
+import FindId from "@/page/FindId";
+import FindPw from "@/page/FindPw";
 
 function App() {
   return (
@@ -16,8 +22,15 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/event" element={<EventTest />} />
         <Route path="/cafeList" element={<CafeList />} />
+        <Route path="/cafe/:id" element={<CafeDetail />} />
+        {/* <Route path="/join" element={<Join />} /> */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/mypage" element={<Mypage />} />
+        <Route path="/distance" element={<DistanceCafeList />} />
+        <Route path="/rank" element={<Rank />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/find-id" element={<FindId />} />
+        <Route path="/find-password" element={<FindPw />} />
       </Routes>
     </Layout>
   );

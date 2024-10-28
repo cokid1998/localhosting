@@ -40,7 +40,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="absolute bottom-[10px] left-1/2 -translate-x-1/2 flex gap-[10px] flex-col items-center">
+    <div className="fixed bottom-[10px] left-1/2 -translate-x-1/2 flex gap-[10px] flex-col items-center">
       <Tabs
         defaultValue={TabData[0].title}
         className=""
@@ -107,3 +107,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// 쿠폰 모달 띄워진 상태에서 밖 영역을 클릭해서 모달을 없앴을 때 쿠폰 버튼 스타일 수정
