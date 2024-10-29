@@ -1,5 +1,5 @@
 import styles from "@/components/Layout/Login.module.css";
-import coffeeIcon from "@/assets/svg/Login/coffeeIcon.png";
+import coffeeIcon from "@/assets/image/Login/coffeeIcon.png";
 import { Coffee } from "lucide-react/";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [activeOption, setActiveOption] = useState("null");
+  const [activeOption, setActiveOption] = useState(null);
+  // "null"이 아니라 null입니다.
+  // c언어에서요 NULL과 "NULL"은 다르잖아요 ㅎㅎ
 
   const handleOptionClick = (option) => {
     setActiveOption(option);
