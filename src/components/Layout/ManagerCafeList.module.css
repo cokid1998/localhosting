@@ -1,6 +1,9 @@
 .managerPage {
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .navbar {
@@ -9,6 +12,10 @@
   justify-content: space-between;
   padding: 16px 0 15px 9px;
   border-bottom: 1px solid #d9d9d9;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
 }
 
 .backIcon {
@@ -36,7 +43,7 @@
 .dataButton {
   background-color: #ff7f48;
   color: white;
-  width: 70%;
+  width: 80%;
   padding: 11px 134px;
   border: none;
   border-radius: 5px;
@@ -46,11 +53,14 @@
 
 .cafeList {
   margin-top: 23px;
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 80px;
 }
 
 .cafeItem {
   display: flex;
-  padding: 15px 0;
+  padding: 11px 0;
   border: none;
 }
 
@@ -58,7 +68,6 @@
   width: 95px;
   height: 95px;
   background-color: #d9d9d9;
-  overflow: hidden;
   border-radius: 10px;
   margin-left: 19px;
 }
@@ -90,10 +99,16 @@
   color: #ff7f48;
   font-size: 12px;
   margin-left: 10px;
+  margin-bottom: 16px;
 }
 
 .distance {
   color: #757575;
   font-size: 12px;
   margin-left: 11px;
+  margin-bottom: 16px;
 }
+
+/* navbar 스크롤 안 되게
+카페 아이템 하단에 마진값
+ */
