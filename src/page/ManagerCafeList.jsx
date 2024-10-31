@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TestData from "@/page/test/TestData.json";
 import { ChevronLeft } from "lucide-react/";
-import { Search } from "lucide-react/";
+import { Search } from "lucide-react/"; // /지워주세요
 
 function ManagerCafeList() {
   const [cafes, setCafes] = useState([]);
@@ -18,6 +18,7 @@ function ManagerCafeList() {
   };
 
   const handleCafeClick = (id) => {
+    // 이런경우 이벤트함수 만들지말고 Link로 처리하는게 간단해서 더 좋을꺼같아요
     navigate(`/cafe/${id}`);
   };
 
