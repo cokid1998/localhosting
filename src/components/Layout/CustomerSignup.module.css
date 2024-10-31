@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 39px;
+  margin-bottom: 14px;
 }
 
 .step {
@@ -54,89 +54,98 @@
 }
 
 /* 선택 메시지 */
-.chooseMsg {
+.enterMsg {
   font-size: 24px;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.secretMsg {
+  font-size: 13px;
   text-align: center;
   margin-bottom: 50px;
 }
 
-/* 회원타입 선택 */
-.cardContainer {
-  height: 142px;
-  width: 312px;
-  border-radius: 10px;
-  margin: auto;
-  margin-bottom: 3em;
+/* 회원가입 폼 */
+.groupForm last-child {
+  margin-bottom: none;
 }
 
-.cardHeader {
-  width: 300px;
-  background-color: #d9d9d9;
-  color: #828282;
-  font-size: 17px;
+.groupForm {
+  margin-bottom: 34px;
+  margin-left: 29px;
+}
+
+.groupForm label {
+  display: block;
   font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.groupForm input {
+  width: 90%;
   padding: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  text-align: left;
-  margin-left: 6px;
-  /* 추가 */
-  position: relative;
-  bottom: -1px;
+  border: none;
+  border-bottom: 1.5px solid #d9d9d9;
+  font-size: 15px;
 }
 
-.headerSelected {
-  background-color: #ff7f48;
-  color: black;
-}
-
-.cardContent {
-  position: relative;
-  z-index: 1;
+/* 이메일 입력 그룹 */
+.inputEmailGroup {
   display: flex;
   align-items: center;
-  padding: 10px;
-  border: 2px solid #d9d9d9;
-  border-radius: 10px;
-  gap: 40px;
+  gap: 7px;
 }
 
-.cardImage {
-  width: 60px;
-  height: 80px;
-  margin-left: 20px;
+.inputEmailGroup input {
+  flex: 1;
 }
 
-.cardText {
-  text-align: left;
+.inputEmailGroup span {
+  font-size: 17px;
+  color: #d9d9d9;
 }
 
-.cardTextDescription {
-  color: #828282;
-  font-size: 13px;
+/* 비밀번호 일치 메시지 */
+.pwMsg {
+  margin-left: 36px;
 }
 
-.cardTextType {
+.match {
+  color: #00973d;
+  font-size: 10px;
+}
+
+.mismatch {
+  color: #ff4d00;
+  font-size: 10px;
+}
+/* 이동 버튼 */
+
+.buttons {
+  display: flex;
+}
+
+.nextBtn {
+  width: 115px;
+  height: 49px;
+  background-color: black;
+  color: white;
+  border-radius: 28px;
   font-size: 20px;
   font-weight: bold;
-}
-
-.selected {
-  border: 2px solid #ff7f48;
-}
-
-.UserSelection {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 70px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* 다음 버튼 */
-
-.nextBtn {
-  width: 267px;
+.beforeBtn {
+  width: 115px;
   height: 49px;
   background-color: black;
   color: white;

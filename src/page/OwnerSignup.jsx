@@ -1,10 +1,8 @@
 import React from "react";
-import styles from "@/components/Layout/Signup.module.css";
+import styles from "@/components/Layout/OwnerSignup.module.css";
 import { Link } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
-import customerImage from "@/components/img/고객님.png";
-import ownerImage from "@/components/img/사장님.png";
 
 function ThreeDot() {
   return (
@@ -16,11 +14,6 @@ function ThreeDot() {
   );
 }
 
-// 파일안에서 컴포넌트를 만드실 때에는 밖으로 빼서 만드세요.
-// 컴포넌트안에서 컴포넌트를 만들면 가독성과 성능면에서 좋지않습니다.
-// 만약 UserCard가 Signup안에 있다면 Signup컴포넌트가 리렌더:링돼서 Signup함수가 실행될 때 마다 UserCard 또한 다시 재생성합니다.
-// 46,48번째에 예시로 콘솔 넣어놨으니 리렌더링을 유발시켜 보고 결과를 확인해보세요
-// 이해가 안가시면 저한테 나중에 말하세요. 다시 설명해드릴께요
 const UserCard = ({ type, title, description, image, onClick, selected }) => {
   return (
     <button className={styles.cardContainer} onClick={onClick}>
@@ -43,8 +36,9 @@ const UserCard = ({ type, title, description, image, onClick, selected }) => {
     </button>
   );
 };
-
+console.log("outer");
 function Signup() {
+  console.log("inner");
   const [selectedType, setSelectedType] = useState(null); //타입 관리
   const [currentStep, setCurrentStep] = useState(1); //단계 관리
   const steps = [1, 2, 3];
@@ -73,14 +67,14 @@ function Signup() {
 
       <div className={styles.stepLevel}>
         <div
-          className={`${styles.step} ${currentStep === 1 ? styles.active : ""}`}
+          className={`${styles.step} ${currentStep >= 1 ? styles.active : ""}`}
           onClick={() => setCurrentStep(1)}
         >
           1
         </div>
         <ThreeDot />
         <div
-          className={`${styles.step} ${currentStep === 2 ? styles.active : ""}`}
+          className={`${styles.step} ${currentStep >= 2 ? styles.active : ""}`}
           onClick={() => setCurrentStep(2)}
         >
           2
@@ -90,7 +84,7 @@ function Signup() {
             <ThreeDot />
             <div
               className={`${styles.step} ${
-                currentStep === 3 ? styles.active : ""
+                currentStep >= 3 ? styles.active : ""
               }`}
               onClick={() => setCurrentStep(3)}
             >
