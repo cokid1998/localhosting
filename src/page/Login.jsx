@@ -78,6 +78,7 @@ function LoginPage() {
         <div className={styles.loginLinks}>
           <Link to="/Find-id">아이디 찾기</Link>
           <Link to="/Find-password">패스워드 찾기</Link>
+          <Link to="/Signup">회원가입</Link>
         </div>
       </div>
     </div>

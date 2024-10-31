@@ -115,7 +115,7 @@ body {
 .loginLinks {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 28px;
 }
 
 .loginLinks a {
