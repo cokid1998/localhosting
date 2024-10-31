@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Separator } from "@/components/ui/separator";
 import {
   InputOTP,
   InputOTPGroup,
@@ -14,13 +13,7 @@ function CouponModal() {
   return (
     <div>
       <div className="w-[290px] bg-black flex flex-col p-[12px] pb-[20px] rounded-[12px] gap-[18px]">
-        <div className="flex flex-col items-center bg-[#FF7F48] rounded-[14px] pt-[18px] px-[16px] pb-[30px]">
-          <div className="w-full mb-[10px] content-center font-semibold text-[14px]">
-            카페이름
-          </div>
-
-          <Separator className="bg-black mb-[24px]" />
-
+        <div className="flex flex-col items-center bg-[#FF7F48] rounded-[14px] pt-[67px] px-[16px] pb-[30px]">
           <div className="w-[102px] h-[102px] bg-gray-200 rounded-[14px] mb-[12px]" />
 
           <div className="text-[14px] font-semibold">아메리카노 ICED</div>
@@ -42,9 +35,9 @@ function CouponModal() {
           <span className="mr-[17px]">
             사장님 고유 핀 번호를 입력해 주세요!
           </span>
-          <div className="w-[52px] h-[32px] bg-[#FF7F48] rounded-[28px] flex justify-center items-center">
+          <button className="w-[52px] h-[32px] bg-[#FF7F48] rounded-[28px] flex justify-center items-center">
             <CheckCheck color="#842800" />
-          </div>
+          </button>
         </div>
       </div>
 
