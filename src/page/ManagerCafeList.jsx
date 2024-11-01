@@ -2,8 +2,10 @@ import styles from "@/components/Layout/ManagerCafeList.module.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import TestData from "@/page/test/TestData.json";
+// import하는 곳이 같다면 한줄로 import 가능합니다.
+// import { ChevronLeft, Search } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
-import { Search } from "lucide-react"; // /지워주세요
+import { Search } from "lucide-react";
 
 function ManagerCafeList() {
   const [cafes, setCafes] = useState([]);

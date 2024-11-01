@@ -105,3 +105,10 @@ function PWResult() {
 }
 
 export default PWResult;
+
+/*
+  1. isPopupVisible에 따라 보여지는 UI는 사실 정확히말하면 popup이 아니라 modal입니다.
+      그냥 알아만 두시고 코드는 굳이 안바꿔도 됩니다.
+
+  2. error메세지 위치 위에 Input이랑 똑같이 맞춰주세요
+*/

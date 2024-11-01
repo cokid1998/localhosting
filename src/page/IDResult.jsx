@@ -19,3 +19,7 @@ function IDResult() {
 }
 
 export default IDResult;
+
+/*
+  화면크기를 줄여서 페이지 확인 해보시고 디자인 다시해주세요
+*/

@@ -7,7 +7,7 @@ function FindPw() {
     <div className={styles.container}>
       <div className={styles.navbar}>
         <Link to="/Login">
-          <ChevronLeft className={styles.backIcon}/>
+          <ChevronLeft className={styles.backIcon} />
         </Link>
       </div>
       <div className={styles.content}>
@@ -40,3 +40,9 @@ function FindPw() {
 }
 
 export default FindPw;
+
+/*
+  추후 추가
+  인증번호 기능구현
+  인증 번호 입력이 완료되기전에는 비밀번호 찾기 button disable처리
+*/
