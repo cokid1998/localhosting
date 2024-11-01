@@ -120,3 +120,8 @@ function Signup() {
 }
 
 export default Signup;
+
+/*
+  2024.11.01
+  아직 이 페이지는 디자인을 안하신건가요?
+*/
