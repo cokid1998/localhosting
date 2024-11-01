@@ -14,6 +14,9 @@ import Login from "@/page/Login";
 import FindId from "@/page/FindId";
 import FindPw from "@/page/FindPw";
 import ManagerCafeList from "@/page/ManagerCafeList";
+import FindIDResult from "@/page/IDResult";
+import FindPWResult from "@/page/PWResult";
+
 
 function App() {
   return (
@@ -33,6 +36,8 @@ function App() {
         <Route path="/find-id" element={<FindId />} />
         <Route path="/find-password" element={<FindPw />} />
         <Route path="/managerCafeList" element={<ManagerCafeList />} />
+        <Route path="/find-id-result" element={<FindIDResult />} />
+        <Route path="/find-pw-result" element={<FindPWResult />} />
       </Routes>
     </Layout>
   );

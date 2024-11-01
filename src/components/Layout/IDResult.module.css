@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 222px;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.idBox {
+  padding: 8px 20px; 
+  margin-top: 16px;
+  background-color: #D9D9D9;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  width: 30%;
+}
+
+.loginButton {
+  margin-top: 193px;
+  padding: 13px 85px;
+  background-color: #FF7F48;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 28px;
+  width: 50%;
+  cursor: pointer;
+}
+
+.findPWButton {
+  margin-top: 16px;
+  padding: 13px 85px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 28px;
+  width: 50%;
+  cursor: pointer;
+}
