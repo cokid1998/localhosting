@@ -1,19 +1,7 @@
 import React, { useState } from "react";
-import styles from "@/components/Layout/CustomerSignup.module.css";
-import { Link } from "react-router-dom";
-import { ChevronLeft } from "lucide-react";
+import styles from "@/components/Layout/Signup.module.css";
 
-function ThreeDot() {
-  return (
-    <>
-      <div className={styles.dot} />
-      <div className={styles.dot} />
-      <div className={styles.dot} />
-    </>
-  );
-}
-
-function CustomerSignup() {
+function SecondSignupForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [domain, setDomain] = useState("");
@@ -21,8 +9,6 @@ function CustomerSignup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [matchPassword, setMatchPassword] = useState(null);
-  const [currentStep, setCurrentStep] = useState(2); // 단계 관리
-  const [selectedType, setSelectedType] = useState("customer"); // 선택된 타입 관리
 
   const handleDomainChange = (e) => {
     const value = e.target.value;
@@ -58,40 +44,10 @@ function CustomerSignup() {
     console.log("회원 정보: ", { name, email, domain, password });
   };
 
-  const handleNext = () => {
-    if (selectedType === "customer" && currentStep < 2) {
-      setCurrentStep(currentStep + 1);
-    }
-  };
-
   return (
     <div className={styles.container}>
-      <div className={styles.navbar}>
-        <Link to="/">
-          <ChevronLeft size={24} color="black" />
-        </Link>
-        <div className={styles.title}>회원가입</div>
-      </div>
-
-      <div className={styles.stepLevel}>
-        <div className={styles.step}>1</div>
-        <ThreeDot />
-        <div
-          className={`${styles.step} ${currentStep === 2 ? styles.active : ""}`}
-          onClick={() => setCurrentStep(2)}
-        >
-          2
-        </div>
-      </div>
-
-      <div className={styles.enterMsg}>회원 정보 입력</div>
-
-      <div className={styles.secretMsg}>
-        입력하신 정보는 저희만 알고 있을게요 :)
-      </div>
-
       {/* 회원가입 폼 */}
-      <div className={styles.container}>
+      <div className={styles.formContainer}>
         <form className={styles.singupForm} onSubmit={handleSubmit}>
           <div className={styles.groupForm}>
             <label htmlFor="name">이름</label>
@@ -120,7 +76,7 @@ function CustomerSignup() {
               {customDomain ? (
                 <input
                   type="text"
-                  placeholder="선택"
+                  placeholder="직접 입력"
                   value={domain}
                   onChange={(e) => setDomain(e.target.value)}
                   required
@@ -167,27 +123,19 @@ function CustomerSignup() {
               required
             />
           </div>
-          <div className={styles.pwMsg}>
-            {matchPassword === true && (
-              <p className={styles.match}>알맞은 비밀번호 입니다!</p>
-            )}
-            {matchPassword === false && (
-              <p className={styles.mismatch}>다시 한번 입력해 주세요!</p>
-            )}
-          </div>
         </form>
       </div>
 
-      <div className={styles.buttons}>
-        <button className={styles.beforeBtn} onClick={() => setCurrentStep(1)}>
-          이전
-        </button>
-        <button className={styles.nextBtn} onClick={handleNext}>
-          다음
-        </button>
+      <div className={styles.pwMsg}>
+        {matchPassword === true && (
+          <p className={styles.match}>알맞은 비밀번호 입니다!</p>
+        )}
+        {matchPassword === false && (
+          <p className={styles.mismatch}>다시 한번 입력해 주세요!</p>
+        )}
       </div>
     </div>
   );
 }
 
-export default CustomerSignup;
+export default SecondSignupForm;
