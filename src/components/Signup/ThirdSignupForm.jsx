@@ -119,42 +119,49 @@ function ThirdSignupForm() {
           </div>
 
           <div className={styles.groupForm}>
-            <label htmlFor="confirmPassword">개업 일자</label>
-            <DatePicker
-              selected={selectedDate}
-              onChange={handleDateChange}
-              dateFormat="yyyy-MM-dd"
-              placeholderText="년도. 월. 일"
-              shouldCloseOnSelect={false} // 선택 시 달력이 닫히지 않도록 설정
-              renderCustomHeader={({ date, decreaseMonth, increaseMonth }) => (
-                <div className="customHeader">
-                  <button className="monthButton" onClick={decreaseMonth}>
-                    {"<"}
-                  </button>
-                  <span
-                    className={`yearLabel ${
-                      viewMode === "year" ? "active" : ""
-                    }`}
-                    onClick={() => setViewMode("year")}
-                  >
-                    {date.getFullYear()}년
-                  </span>
-                  <span
-                    className={`monthLabel ${
-                      viewMode === "month" ? "active" : ""
-                    }`}
-                    onClick={() => setViewMode("month")}
-                  >
-                    {date.toLocaleString("default", { month: "numeric" })}
-                  </span>
-                  <button className="monthButton" onClick={increaseMonth}>
-                    {">"}
-                  </button>
-                </div>
-              )}
-              showYearPicker={viewMode === "year"}
-              showMonthYearPicker={viewMode === "month"}
-            />
+            <label htmlFor="openDate">개업 일자</label>
+            <>
+              <DatePicker
+                className={styles.datePicker}
+                selected={selectedDate}
+                onChange={handleDateChange}
+                dateFormat="yyyy-MM-dd"
+                placeholderText="년도. 월. 일"
+                shouldCloseOnSelect={false} // 선택 시 달력이 닫히지 않도록 설정
+                renderCustomHeader={({
+                  date,
+                  decreaseMonth,
+                  increaseMonth,
+                }) => (
+                  <div className="customHeader">
+                    <button className="monthButton" onClick={decreaseMonth}>
+                      {"<"}
+                    </button>
+                    <span
+                      className={`yearLabel ${
+                        viewMode === "year" ? "active" : ""
+                      }`}
+                      onClick={() => setViewMode("year")}
+                    >
+                      {date.getFullYear()}년
+                    </span>
+                    <span
+                      className={`monthLabel ${
+                        viewMode === "month" ? "active" : ""
+                      }`}
+                      onClick={() => setViewMode("month")}
+                    >
+                      {date.toLocaleString("default", { month: "numeric" })}
+                    </span>
+                    <button className="monthButton" onClick={increaseMonth}>
+                      {">"}
+                    </button>
+                  </div>
+                )}
+                showYearPicker={viewMode === "year"}
+                showMonthYearPicker={viewMode === "month"}
+              />
+            </>
           </div>
         </form>
       </div>

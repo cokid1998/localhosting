@@ -207,7 +207,7 @@
 .inputEmailGroup select {
   height: 44px;
   flex: 1;
-  padding: 7px;
+  padding: 10px;
   font-size: 15px;
   border: none;
   border-bottom: 1.5px solid #d9d9d9;
@@ -218,6 +218,7 @@
   font-size: 17px;
   color: #d9d9d9;
 }
+
 /* 계좌 입력 그룹 */
 .inputAccountGroup {
   display: flex;
@@ -229,7 +230,7 @@
 .inputAccountGroup select {
   flex: 1;
   height: 44px;
-  padding: 7px;
+  padding: 10px;
   font-size: 15px;
   border: none;
   border-bottom: 1.5px solid #d9d9d9;
@@ -238,11 +239,12 @@
 .inputAccountGroup input[type="text"] {
   flex: 3;
   height: 44px;
-  padding: 7px;
+  padding: 10px;
   font-size: 15px;
   border: none;
   border-bottom: 1.5px solid #d9d9d9;
 }
+
 /* 비밀번호 일치 메시지 */
 .pwMsg {
   margin-top: 8px;
@@ -258,6 +260,19 @@
 .mismatch {
   color: #ff4d00;
   font-size: 10px;
+}
+
+/* 개업 일자 그룹 */
+
+.datePicker {
+  flex: 1; /* DatePicker가 남은 공간을 차지하도록 설정 */
+  border: none;
+  border-bottom: 1px solid #d1d1d1; /* 하단에만 경계선 추가 */
+  font-size: 16px;
+  color: #b3b3b3;
+  background-color: transparent;
+  outline: none;
+  padding: 5px 0;
 }
 
 /* 이동 버튼 */
