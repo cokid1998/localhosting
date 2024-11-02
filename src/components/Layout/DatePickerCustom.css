@@ -4,28 +4,28 @@
 }
 
 /* custom-header: 컨테이너 스타일 */
-.custom-header {
+.custoHeader {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 /* month-button: 이전/다음 버튼 스타일 */
-.month-button {
+.monthButton {
   background: none;
   border: none;
   cursor: pointer;
 }
 
 /* year-label 및 month-label: 년도 및 월 표시 스타일 */
-.year-label,
-.month-label {
+.yearLabel,
+.monthLabel {
   cursor: pointer;
   margin: 0 10px;
 }
 
 /* 활성화된 상태 (bold 스타일) */
-.year-label.active,
-.month-label.active {
+.yearLabel.active,
+.monthLabel.active {
   font-weight: bold;
 }

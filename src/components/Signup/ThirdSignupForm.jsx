@@ -7,14 +7,26 @@ import "react-datepicker/dist/react-datepicker.css";
 function ThirdSignupForm() {
   const [businessNum, setBusinessNum] = useState("");
   const [businessName, setBusinessName] = useState("");
-  const [acount, setAcount] = useState("");
+  const [account, setAccount] = useState("");
+  const [bank, setBank] = useState("");
   const [openDate, setOpenDate] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [viewMode, setViewMode] = useState("day");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("가게 정보: ", { businessNum, businessName, acount, openDate });
+    console.log("가게 정보: ", {
+      businessNum,
+      businessName,
+      bank,
+      account,
+      openDate,
+    });
+  };
+
+  const handleBankChange = (e) => {
+    const value = e.target.value;
+    setBank(value);
   };
 
   const handleDateChange = (date) => {
@@ -52,24 +64,55 @@ function ThirdSignupForm() {
           </div>
 
           <div className={styles.groupForm}>
-            <label htmlFor="acount">은행 계좌번호</label>
-            <div className={styles.inputEmailGroup}>
-              <select value={acount} className={styles.bankSelect} required>
+            <label htmlFor="account">은행 계좌번호</label>
+            <div className={styles.inputAccountGroup}>
+              <select
+                value={bank}
+                onChange={(e) => setBank(e.target.value)}
+                required
+              >
                 <option value="" disabled>
                   선택
                 </option>
-                <option value="gmail.com">gmail.com</option>
-                <option value="naver.com">naver.com</option>
-                <option value="daum.net">daum.net</option>
-                <option value="custom">직접 입력</option>
+                <option value="국민은행">국민은행</option>
+                <option value="기업은행t">기업은행</option>
+                <option value="농협은행">농협은행</option>
+                <option value="신한은행">신한은행</option>
+                <option value="산업은행">산업은행</option>
+                <option value="우리은행">우리은행</option>
+                <option value="카카오뱅크">카카오뱅크</option>
+                <option value="하나은행">하나은행</option>
+                <option value="한국씨티은행">한국씨티은행</option>
+                <option value="경남은행">경남은행</option>
+                <option value="광주은행">광주은행</option>
+                <option value="iM뱅크">iM뱅크</option>
+                <option value="도이치은행">도이치은행</option>
+                <option value="뱅크오브아메리카">뱅크오브아메리카</option>
+                <option value="부산은행">부산은행</option>
+                <option value="산림조합중앙회">산림조합중앙회</option>
+                <option value="저축은행">저축은행</option>
+                <option value="새마을금고">새마을금고</option>
+                <option value="수협은행">수협은행</option>
+                <option value="신협중앙회">신협중앙회</option>
+                <option value="우체국">우체국</option>
+                <option value="전북은행">전북은행</option>
+                <option value="제주은행">제주은행</option>
+                <option value="중국건설은행">중국건설은행</option>
+                <option value="중국공상은행">중국공상은행</option>
+                <option value="중국은행">중국은행</option>
+                <option value="BNP파리바은행">BNP파리바은행</option>
+                <option value="HSBC은행">HSBC은행</option>
+                <option value="JP모간체이스은행">JP모간페이스은행</option>
+                <option value="케이뱅크">케이뱅크</option>
+                <option value="토스뱅크">토스뱅크</option>
               </select>
 
               <input
                 type="text"
-                id="acount"
+                id="account"
                 placeholder="이곳에 입력해 주세요!"
-                value={acount}
-                onChange={(e) => setAcount(e.target.value)}
+                value={account}
+                onChange={(e) => setAccount(e.target.value)}
                 required
               />
             </div>
@@ -81,15 +124,15 @@ function ThirdSignupForm() {
               selected={selectedDate}
               onChange={handleDateChange}
               dateFormat="yyyy-MM-dd"
-              placeholderText="날짜를 선택하세요"
+              placeholderText="년도. 월. 일"
               shouldCloseOnSelect={false} // 선택 시 달력이 닫히지 않도록 설정
               renderCustomHeader={({ date, decreaseMonth, increaseMonth }) => (
-                <div className="custom-header">
-                  <button className="month-button" onClick={decreaseMonth}>
+                <div className="customHeader">
+                  <button className="monthButton" onClick={decreaseMonth}>
                     {"<"}
                   </button>
                   <span
-                    className={`year-label ${
+                    className={`yearLabel ${
                       viewMode === "year" ? "active" : ""
                     }`}
                     onClick={() => setViewMode("year")}
@@ -97,14 +140,14 @@ function ThirdSignupForm() {
                     {date.getFullYear()}년
                   </span>
                   <span
-                    className={`month-label ${
+                    className={`monthLabel ${
                       viewMode === "month" ? "active" : ""
                     }`}
                     onClick={() => setViewMode("month")}
                   >
                     {date.toLocaleString("default", { month: "numeric" })}
                   </span>
-                  <button className="month-button" onClick={increaseMonth}>
+                  <button className="monthButton" onClick={increaseMonth}>
                     {">"}
                   </button>
                 </div>

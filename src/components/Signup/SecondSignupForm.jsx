@@ -93,6 +93,8 @@ function SecondSignupForm() {
                   </option>
                   <option value="gmail.com">gmail.com</option>
                   <option value="naver.com">naver.com</option>
+                  <option value="nate.com">nate.com</option>
+                  <option value="kakao.com">kakao.com</option>
                   <option value="daum.net">daum.net</option>
                   <option value="custom">직접 입력</option>
                 </select>
