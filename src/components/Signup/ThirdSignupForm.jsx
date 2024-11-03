@@ -47,7 +47,6 @@ function ThirdSignupForm() {
               placeholder="이곳에 입력해 주세요!"
               value={businessNum}
               onChange={(e) => setBusinessNum(e.target.value)}
-              required
             />
           </div>
 
@@ -59,18 +58,13 @@ function ThirdSignupForm() {
               placeholder="이곳에 입력해 주세요!"
               value={businessName}
               onChange={(e) => setBusinessName(e.target.value)}
-              required
             />
           </div>
 
           <div className={styles.groupForm}>
             <label htmlFor="account">은행 계좌번호</label>
             <div className={styles.inputAccountGroup}>
-              <select
-                value={bank}
-                onChange={(e) => setBank(e.target.value)}
-                required
-              >
+              <select value={bank} onChange={(e) => setBank(e.target.value)}>
                 <option value="" disabled>
                   선택
                 </option>
@@ -108,12 +102,11 @@ function ThirdSignupForm() {
               </select>
 
               <input
-                type="text"
+                type="number"
                 id="account"
                 placeholder="이곳에 입력해 주세요!"
                 value={account}
                 onChange={(e) => setAccount(e.target.value)}
-                required
               />
             </div>
           </div>

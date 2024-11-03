@@ -48,7 +48,6 @@ function Signup() {
 
   const handleSelection = (type) => {
     setSelectedType(type);
-    setCurrentStep(1);
   };
 
   const handleNext = () => {
@@ -143,6 +142,7 @@ function Signup() {
           </div>
         </>
       )}
+
       {currentStep === 2 && selectedType === "customer" && (
         <>
           <div className={styles.enterMsg}>회원 정보 입력</div>
@@ -152,6 +152,7 @@ function Signup() {
           <SecondSignupForm />
         </>
       )}
+
       {currentStep === 2 && selectedType === "owner" && (
         <>
           <div className={styles.enterMsg}>회원 정보 입력</div>
@@ -161,11 +162,13 @@ function Signup() {
           <SecondSignupForm />
         </>
       )}
+
       {currentStep === 3 && selectedType === "customer" && (
         <>
           <SuccessSignupForm />
         </>
       )}
+
       {currentStep === 3 && selectedType === "owner" && (
         <>
           <div className={styles.enterMsg}>가게 정보 입력</div>
@@ -173,6 +176,7 @@ function Signup() {
           <ThirdSignupForm />
         </>
       )}
+
       {currentStep === 4 && selectedType === "owner" && (
         <>
           <SuccessSignupForm />
@@ -185,21 +189,21 @@ function Signup() {
       ) && (
         //이동 버튼
         <>
-          {currentStep === 1 && (
-            <button className={styles.firstNextBtn} onClick={handleNext}>
-              다음
-            </button>
-          )}
-          {currentStep > 1 && (
-            <div className={styles.buttons}>
+          <div className={styles.buttons}>
+            {currentStep !== 1 && (
               <button className={styles.prevBtn} onClick={handleBack}>
                 이전
               </button>
-              <button className={styles.nextBtn} onClick={handleNext}>
-                다음
-              </button>
-            </div>
-          )}
+            )}
+            <button
+              className={
+                currentStep === 1 ? styles.firstNextBtn : styles.nextBtn
+              }
+              onClick={handleNext}
+            >
+              다음
+            </button>
+          </div>
         </>
       )}
     </div>
