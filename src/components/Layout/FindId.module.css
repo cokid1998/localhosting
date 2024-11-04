@@ -72,6 +72,8 @@
   border-radius: 27px;
   font-size: 12px;
   cursor: pointer;
+  width: 92px;
+  white-space: nowrap;
 }
 
 .verifyButton {
@@ -84,11 +86,12 @@
   border-radius: 27px;
   font-size: 12px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .findIDButton {
   margin-top: 35.25px;
-  width: 80%;
+  width: 267px;
   padding: 13px 85px;
   background-color: black;
   color: white;
