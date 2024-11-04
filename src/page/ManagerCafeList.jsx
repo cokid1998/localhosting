@@ -2,13 +2,11 @@ import styles from "@/components/Layout/ManagerCafeList.module.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import TestData from "@/page/test/TestData.json";
-// import하는 곳이 같다면 한줄로 import 가능합니다.
-// import { ChevronLeft, Search } from "lucide-react";
-import { ChevronLeft } from "lucide-react";
-import { Search } from "lucide-react";
+import { ChevronLeft, Search, X } from "lucide-react";
 
 function ManagerCafeList() {
   const [cafes, setCafes] = useState([]);
+  const [isSearchActive, setIsSearchActive] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,19 +17,40 @@ function ManagerCafeList() {
     navigate(-1);
   };
 
+  const toggleSearch = () => {
+    setIsSearchActive(!isSearchActive);
+  };
+
   return (
     <div className={styles.managerPage}>
       <div className={styles.navbar}>
         <ChevronLeft className={styles.backIcon} onClick={handleBack} />
         <div className={styles.title}>관리자 페이지</div>
-        <Search className={styles.searchIcon} />
+        <Search
+          className={`${styles.searchIcon} ${isSearchActive ? styles.activeSearchIcon : ""}`}
+          onClick={toggleSearch}
+        />
       </div>
 
-      <div className={styles.dataButtonContainer}>
-        <button className={styles.dataButton}>데이터 추출</button>
-      </div>
+      {isSearchActive && (
+        <div className={styles.searchContainer}>
+          <input
+            type="text"
+            placeholder="검색어를 입력하세요"
+            className={styles.searchInput}
+          />
+          <X className={styles.closeIcon} onClick={toggleSearch} />
+        </div>
+      )}
+
+      {!isSearchActive && (
+        <div className={styles.dataButtonContainer}>
+          <button className={styles.dataButton}>데이터 추출</button>
+        </div>
+      )}
 
       <div className={styles.cafeList}>
+        {isSearchActive && <div className={styles.overlay}></div>}
         {cafes.map((cafe) => (
           <Link
             to={`/cafe/${cafe.id}`}
@@ -55,16 +74,3 @@ function ManagerCafeList() {
 }
 
 export default ManagerCafeList;
-
-/*
-  2024.10.29
-  1. 아래에 있는 네비게이션에 마지막 카페 리스트가 가리니 아래에 간격 좀 주세요.
-
-  2. 현재 스크롤을 하면 상단navbar가 가려져서 사용자 경험이 좋지않습니다.
-      카페리스트 부분만 스크롤되게 리팩토링 해보세요.
-
-  3. 리스트를 클릭했을 때 페이지 전환되는건 아직 구현 안된건가요?
-
-  4. < 아이콘을 눌렀을 때 뒤로가기를 구현해보세요. ❗인덱스 페이지로 가도록 하는것이 아니라 뒤로가야합니다.
-
-*/

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .managerPage {
   width: 100%;
   margin: 0 auto;
@@ -14,7 +18,7 @@
   border-bottom: 1px solid #d9d9d9;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   background-color: #fff;
 }
 
@@ -34,6 +38,39 @@
   margin-right: 16px;
 }
 
+.activeSearchIcon {
+  color: #ff7f48;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  padding: 11px 14px;
+  background-color: #fff;
+  border-bottom: 1px solid #d9d9d9;
+  z-index: 3;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 12px 19px;
+  font-size: 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 35px;
+  margin-right: 10px;
+}
+
+.searchInput::placeholder {
+  color: #d9d9d9;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 .dataButtonContainer {
   display: flex;
   justify-content: center;
@@ -43,7 +80,7 @@
 .dataButton {
   background-color: #ff7f48;
   color: white;
-  width: 80%;
+  width: 331px;
   padding: 11px 134px;
   border: none;
   border-radius: 5px;
@@ -52,10 +89,11 @@
 }
 
 .cafeList {
-  margin-top: 23px;
   flex: 1;
   overflow-y: auto;
   padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 .cafeItem {
@@ -109,6 +147,13 @@
   margin-bottom: 16px;
 }
 
-/* navbar 스크롤 안 되게
-카페 아이템 하단에 마진값
- */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
