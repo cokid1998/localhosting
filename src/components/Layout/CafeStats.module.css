@@ -1,11 +1,18 @@
-/* 상단 네비바 */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
+/* 상단 네비바 */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 0px 15px 9px;
-  border-bottom: 2px solid #d9d9d9;
+  background-color: white;
 }
 
 .title {
@@ -16,6 +23,42 @@
 }
 
 /* 카페 배경 이미지 */
-.backImg {
-  background-color: #d9d9d9;
+.imgBox {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  position: relative;
 }
+
+.cafeImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 카페 흰색 부분 */
+.cafeContainer {
+  width: 100%;
+  height: calc(100vh - 320px);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: white;
+  position: relative;
+  top: -30px;
+  z-index: 1;
+}
+
+.cafeName {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 21px;
+  padding-top: 30px;
+}
+
+.cafeIntro {
+  font-size: 13px;
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
+/* 온도 */
