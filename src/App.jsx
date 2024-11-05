@@ -13,6 +13,7 @@ import CafeDetail from "@/page/CafeDetail";
 import Login from "@/page/Login";
 import FindId from "@/page/FindId";
 import FindPw from "@/page/FindPw";
+import CafeStats from "@/page/CafeStats";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/find-id" element={<FindId />} />
         <Route path="/find-password" element={<FindPw />} />
+        <Route path="/cafeStats" element={<CafeStats />} />
       </Routes>
     </Layout>
   );
