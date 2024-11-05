@@ -31,7 +31,10 @@ function ManagerCafeList() {
         <ChevronLeft className={styles.backIcon} onClick={handleBack} />
         <div className={styles.title}>관리자 페이지</div>
         <Search
-          className={`${styles.searchIcon} ${isSearchActive ? styles.activeSearchIcon : ""}`}
+          // className={`${styles.searchIcon} ${isSearchActive ? styles.activeSearchIcon : ""}`}
+          className={`${styles.searchIcon} ${
+            isSearchActive && styles.activeSearchIcon
+          }`} // 이렇게 하라는 말이였습니다.
           onClick={toggleSearch}
         />
       </div>
@@ -78,10 +81,9 @@ function ManagerCafeList() {
 
 export default ManagerCafeList;
 
-
-
 /* 2024.11.04
 1. overlay와 검색컴포넌트가 따로 위치해있는데 같은 컴포넌트로 묶는게 좋아요.
+  -> styles.overlay div안에 styles.searchContainer div를 넣어서 만들어주세요
 
 2. 회색 부분을 클릭해도 검색UI가 없어지도록 만들어보세요.
     1번 과정을 통해 하나의 컴포넌트로 묶고 2번과정을 하다보면 아마 input과 searchContainer클래스를 가지는 div영역을 클릭해도
@@ -89,4 +91,6 @@ export default ManagerCafeList;
 
 3. 지금 돋보기를 누르면 Cafe리스트의 위치들이 변경되면서 보기 좋지않은데요.
     데이터 추출버튼 위에 검색 모달이 뜨는 형태로 만들어보세요.
+
+4. 모달이 창이 뜨면 스크롤이 활성화 안되게 만들어보세요
 */
