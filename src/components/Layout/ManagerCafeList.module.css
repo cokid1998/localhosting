@@ -45,10 +45,14 @@
 .searchContainer {
   display: flex;
   align-items: center;
-  padding: 11px 14px;
+  padding: 0 14px;
   background-color: #fff;
-  border-bottom: 1px solid #d9d9d9;
-  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 2;
 }
 
 .searchInput {
@@ -75,6 +79,8 @@
   display: flex;
   justify-content: center;
   margin: 23px 0;
+  position: relative;
+  z-index: 2;
 }
 
 .dataButton {
@@ -152,7 +158,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
