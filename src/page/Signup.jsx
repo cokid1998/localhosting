@@ -72,7 +72,7 @@ function Signup() {
       ) && (
         //네비바
         <div className={styles.navbar}>
-          <Link to="/">
+          <Link to="/login">
             <ChevronLeft size={24} color="black" />
           </Link>
           <div className={styles.title}>회원가입</div>
