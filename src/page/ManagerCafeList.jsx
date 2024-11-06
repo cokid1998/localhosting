@@ -13,6 +13,17 @@ function ManagerCafeList() {
     setCafes(TestData);
   }, []);
 
+  useEffect(() => {
+    if (isSearchActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isSearchActive]);
+
   const handleBack = () => {
     navigate(-1);
   };
@@ -31,18 +42,18 @@ function ManagerCafeList() {
         <ChevronLeft className={styles.backIcon} onClick={handleBack} />
         <div className={styles.title}>관리자 페이지</div>
         <Search
-          // className={`${styles.searchIcon} ${isSearchActive ? styles.activeSearchIcon : ""}`}
-          className={`${styles.searchIcon} ${
-            isSearchActive && styles.activeSearchIcon
-          }`} // 이렇게 하라는 말이였습니다.
+          className={`${styles.searchIcon} ${isSearchActive ? styles.activeSearchIcon : ""}`}
           onClick={toggleSearch}
         />
       </div>
 
       <div className={styles.dataButtonContainer}>
         <button className={styles.dataButton}>데이터 추출</button>
-        {isSearchActive && (
-          <div className={styles.searchContainer}>
+      </div>
+
+      {isSearchActive && (
+        <div className={styles.overlay} onClick={closeSearch}>
+          <div className={styles.searchContainer} onClick={(e) => e.stopPropagation()}>
             <input
               type="text"
               placeholder="검색어를 입력하세요"
@@ -50,13 +61,10 @@ function ManagerCafeList() {
             />
             <X className={styles.closeIcon} onClick={toggleSearch} />
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className={styles.cafeList}>
-        {isSearchActive && (
-          <div className={styles.overlay} onClick={closeSearch}></div>
-        )}
         {cafes.map((cafe) => (
           <Link
             to={`/cafe/${cafe.id}`}
@@ -80,6 +88,7 @@ function ManagerCafeList() {
 }
 
 export default ManagerCafeList;
+
 
 /* 2024.11.04
 1. overlay와 검색컴포넌트가 따로 위치해있는데 같은 컴포넌트로 묶는게 좋아요.
