@@ -57,7 +57,6 @@ function SecondSignupForm() {
               placeholder="이름을 입력해 주세요!"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              required
             />
           </div>
 
@@ -70,7 +69,6 @@ function SecondSignupForm() {
                 placeholder="이메일"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required
               />
               <span>@</span>
               {customDomain ? (
@@ -79,14 +77,12 @@ function SecondSignupForm() {
                   placeholder="직접 입력"
                   value={domain}
                   onChange={(e) => setDomain(e.target.value)}
-                  required
                 />
               ) : (
                 <select
                   value={domain}
                   onChange={handleDomainChange}
                   className={styles.domainSelect}
-                  required
                 >
                   <option value="" disabled>
                     선택
@@ -110,7 +106,6 @@ function SecondSignupForm() {
               placeholder="비밀번호를 설정해 주세요!"
               value={password}
               onChange={handlePasswordChange}
-              required
             />
           </div>
 
@@ -122,7 +117,6 @@ function SecondSignupForm() {
               placeholder="다시 한번 입력해 주세요"
               value={confirmPassword}
               onChange={handleConfirmPasswordChange}
-              required
             />
           </div>
         </form>
