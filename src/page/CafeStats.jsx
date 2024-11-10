@@ -4,14 +4,13 @@ import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function CafeStats() {
-  const externalTemperatureData = 25.3; //예시 데이터
+  const currentMonth = new Date().getMonth() + 1;
+  const currentDay = new Date().toLocaleString("ko-KR", { weekday: "long" });
 
-  const [value, setValue] = useState(externalTemperatureData.toFixed(1));
-
-  useEffect(() => {
-    setValue(externalTemperatureData.toFixed(1));
-    updateTempBarBackground(externalTemperatureData);
-  }, [externalTemperatureData]);
+  const [value, setValue] = useState("0.0");
+  const [totalCoupon, setTotalCoupon] = useState(0);
+  const [monthlyCoupon, setMonthlyCoupon] = useState(0);
+  const [dailyCoupon, setDailyCoupon] = useState(0);
 
   const updateTempBarBackground = (newValue) => {
     const bar = document.getElementById("tempBar");
@@ -36,6 +35,30 @@ function CafeStats() {
       </div>
     );
   };
+
+  // 서버에서 데이터 가져오기
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        // 온도 데이터
+        const tempResponse = await fetch("/api/temperature");
+        const tempData = await tempResponse.json();
+        const tempValue = tempData.temperature;
+        setValue(tempValue.toFixed(1)); // 온도를 소수점 첫째 자리까지 표시
+        updateTempBarBackground(tempValue);
+        // 쿠폰 데이터
+        const couponResponse = await fetch("/api/coupon");
+        const couponData = await couponResponse.json();
+        setTotalCoupon(couponData.total);
+        setMonthlyCoupon(couponData.monthly);
+        setDailyCoupon(couponData.daily);
+      } catch (error) {
+        console.error("데이터 오류 발생:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -76,19 +99,19 @@ function CafeStats() {
           <CouponCard
             title="총 쿠폰 사용 횟수"
             label="전체"
-            value="0회"
+            value={`${totalCoupon}회`}
             headerColor="#ff7f48" // 주황색 배경
           />
           <CouponCard
             title="월별 쿠폰 사용 횟수"
-            label="0월"
-            value="0회"
+            label={`${currentMonth}월`}
+            value={`${monthlyCoupon}회`}
             headerColor="black" // 검은색 배경
           />
           <CouponCard
             title="하루 쿠폰 사용 횟수"
-            label="0요일"
-            value="0회"
+            label={`${currentDay}`}
+            value={`${dailyCoupon}회`}
             headerColor="black" // 검은색 배경
           />
         </div>
