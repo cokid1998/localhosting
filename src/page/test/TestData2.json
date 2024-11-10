@@ -1,0 +1,19 @@
+[
+  {
+    "complainNum": 1,
+    "cafeName": "ABC",
+    "userName": "홍길동",
+    "date": "오전 11:50, 24.11.01",
+    "complainCount": 3,
+    "complainContent": "배가 너무 고파요",
+    "imageUrl": "https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+  },
+  {
+    "complainNum": 2,
+    "cafeName": "DEF",
+    "userName": "강감찬",
+    "date": "오후 04:20, 24.10.07",
+    "complainCount": 2,
+    "complainContent": "배가 너무 고파요"
+  }
+]
