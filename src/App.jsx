@@ -13,6 +13,10 @@ import CafeDetail from "@/page/CafeDetail";
 import Login from "@/page/Login";
 import FindId from "@/page/FindId";
 import FindPw from "@/page/FindPw";
+import ManagerCafeList from "@/page/ManagerCafeList";
+import FindIDResult from "@/page/IDResult";
+import FindPWResult from "@/page/PWResult";
+import CafeRegist from "@/page/CafeRegist";
 import CafeStats from "@/page/CafeStats";
 import CommentManage from "@/page/CommentManage";
 
@@ -32,6 +36,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/find-id" element={<FindId />} />
         <Route path="/find-password" element={<FindPw />} />
+        <Route path="/managerCafeList" element={<ManagerCafeList />} />
+        <Route path="/find-id-result" element={<FindIDResult />} />
+        <Route path="/find-pw-result" element={<FindPWResult />} />
+        <Route path="/cafe-regist" element={<CafeRegist />} />
         <Route path="/cafeStats" element={<CafeStats />} />
         <Route path="/commentManage" element={<CommentManage />} />
       </Routes>

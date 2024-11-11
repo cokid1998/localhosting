@@ -22,5 +22,29 @@
     "temperature": "30.0°C",
     "distance": "0.5km",
     "image": "https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+  },
+  {
+    "id": 4,
+    "name": "Espresso School",
+    "description": "간단한 카페 소개글을 입력하세요.",
+    "temperature": "100.0°C",
+    "distance": "0.9km",
+    "image": "https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+  },
+  {
+    "id": 5,
+    "name": "Espresso School",
+    "description": "간단한 카페 소개글을 입력하세요.",
+    "temperature": "100.0°C",
+    "distance": "0.9km",
+    "image": "https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
+  },
+  {
+    "id": 6,
+    "name": "Espresso School",
+    "description": "간단한 카페 소개글을 입력하세요.",
+    "temperature": "100.0°C",
+    "distance": "0.9km",
+    "image": "https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg?rnd=20230712163021"
   }
 ]
