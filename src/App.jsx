@@ -1,32 +1,28 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "@/components/Layout/Layout";
-import Test from "@/page/Test";
 import Main from "@/page/Main";
-import Hello from "@/page/Hello";
 import CafeList from "@/page/CafeList";
-import EventTest from "@/page/test/EventTest";
-import Signup from "@/page/Signup";
 import Mypage from "@/page/Mypage";
 import DistanceCafeList from "@/page/DistanceCafeList";
 import Rank from "@/components/Main/Rank";
 import CafeDetail from "@/page/CafeDetail";
-import Login from "@/page/Login";
-import FindId from "@/page/FindId";
-import FindPw from "@/page/FindPw";
 import ManagerCafeList from "@/page/ManagerCafeList";
-import FindIDResult from "@/page/IDResult";
-import FindPWResult from "@/page/PWResult";
 import CafeRegist from "@/page/CafeRegist";
 import CafeStats from "@/page/CafeStats";
 import CommentManage from "@/page/CommentManage";
+/* Auth */
+import Login from "@/page/auth/Login";
+import FindId from "@/page/auth/FindId";
+import FindPw from "@/page/auth/FindPw";
+import FindIDResult from "@/page/auth/IDResult";
+import FindPWResult from "@/page/auth/PWResult";
+import Signup from "@/page/auth/Signup";
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/test" element={<Test />} />
-        <Route path="/event" element={<EventTest />} />
         <Route path="/cafeList" element={<CafeList />} />
         <Route path="/cafe/:id" element={<CafeDetail />} />
         <Route path="/signup" element={<Signup />} />

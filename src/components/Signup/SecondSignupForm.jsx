@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styles from "@/components/Layout/Signup.module.css";
+import { useState } from "react";
+import styles from "@/styles/auth/Signup.module.css";
 
 function SecondSignupForm() {
   const [name, setName] = useState("");

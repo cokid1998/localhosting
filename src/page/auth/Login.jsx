@@ -1,4 +1,4 @@
-import styles from "@/components/Layout/Login.module.css";
+import styles from "@/styles/auth/Login.module.css";
 import coffeeIcon from "@/assets/image/Login/coffeeIcon.png";
 import { Coffee } from "lucide-react/";
 import { useState } from "react";

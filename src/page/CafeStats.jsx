@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import styles from "@/components/Layout/CafeStats.module.css";
+import { useState, useEffect } from "react";
+import styles from "@/styles/CafeStats.module.css";
 import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 

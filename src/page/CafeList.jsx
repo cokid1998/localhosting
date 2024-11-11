@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "@/components/Layout/CafeList.module.css";
-import TestData from "@/page/test/TestData.json";
+import styles from "@/styles/CafeList.module.css";
+import TestData from "@/data/TestData.json";
 import { useState } from "react";
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -18,16 +17,6 @@ function CafeList() {
     // fetchData();
     setCafes(TestData);
   }, []);
-
-  const Router = () => {
-    return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Main />} />
-        </Routes>
-      </BrowserRouter>
-    );
-  };
 
   return (
     <div className={styles.container}>

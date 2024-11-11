@@ -1,5 +1,4 @@
-import React from "react";
-import styles from "@/components/Layout/Signup.module.css";
+import styles from "@/styles/auth/Signup.module.css";
 import { Link } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
