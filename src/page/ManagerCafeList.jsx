@@ -42,7 +42,9 @@ function ManagerCafeList() {
         <ChevronLeft className={styles.backIcon} onClick={handleBack} />
         <div className={styles.title}>관리자 페이지</div>
         <Search
-          className={`${styles.searchIcon} ${isSearchActive ? styles.activeSearchIcon : ""}`}
+          className={`${styles.searchIcon} ${
+            isSearchActive && styles.activeSearchIcon
+          }`}
           onClick={toggleSearch}
         />
       </div>
@@ -53,7 +55,10 @@ function ManagerCafeList() {
 
       {isSearchActive && (
         <div className={styles.overlay} onClick={closeSearch}>
-          <div className={styles.searchContainer} onClick={(e) => e.stopPropagation()}>
+          <div
+            className={styles.searchContainer}
+            onClick={(e) => e.stopPropagation()}
+          >
             <input
               type="text"
               placeholder="검색어를 입력하세요"
@@ -88,7 +93,6 @@ function ManagerCafeList() {
 }
 
 export default ManagerCafeList;
-
 
 /* 2024.11.04
 1. overlay와 검색컴포넌트가 따로 위치해있는데 같은 컴포넌트로 묶는게 좋아요.

@@ -16,6 +16,7 @@ import FindPw from "@/page/FindPw";
 import ManagerCafeList from "@/page/ManagerCafeList";
 import FindIDResult from "@/page/IDResult";
 import FindPWResult from "@/page/PWResult";
+import CafeRegist from "@/page/CafeRegist";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path="/managerCafeList" element={<ManagerCafeList />} />
         <Route path="/find-id-result" element={<FindIDResult />} />
         <Route path="/find-pw-result" element={<FindPWResult />} />
+        <Route path="/cafe-regist" element={<CafeRegist />} />
       </Routes>
     </Layout>
   );
