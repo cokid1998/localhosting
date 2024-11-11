@@ -64,12 +64,13 @@ function Main() {
         </div>
 
         <div className="flex flex-col px-[15px] mb-[80px]">
-          <h2 className="font-bold text-[24px] flex items-center justify-between mb-[24px]">
+          <Link
+            to="/cafeList"
+            className="font-bold text-[24px] flex items-center justify-between mb-[24px]"
+          >
             등록된 전체 카페
-            <Link to="/cafeList">
-              <ChevronRightIcon />
-            </Link>
-          </h2>
+            <ChevronRightIcon />
+          </Link>
 
           <div className="flex gap-[15px] overflow-auto mobile:scrollbar-hide">
             <AllCafeList />

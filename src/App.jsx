@@ -17,7 +17,8 @@ import ManagerCafeList from "@/page/ManagerCafeList";
 import FindIDResult from "@/page/IDResult";
 import FindPWResult from "@/page/PWResult";
 import CafeRegist from "@/page/CafeRegist";
-
+import CafeStats from "@/page/CafeStats";
+import CommentManage from "@/page/CommentManage";
 
 function App() {
   return (
@@ -28,7 +29,6 @@ function App() {
         <Route path="/event" element={<EventTest />} />
         <Route path="/cafeList" element={<CafeList />} />
         <Route path="/cafe/:id" element={<CafeDetail />} />
-        {/* <Route path="/join" element={<Join />} /> */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/distance" element={<DistanceCafeList />} />
@@ -40,6 +40,8 @@ function App() {
         <Route path="/find-id-result" element={<FindIDResult />} />
         <Route path="/find-pw-result" element={<FindPWResult />} />
         <Route path="/cafe-regist" element={<CafeRegist />} />
+        <Route path="/cafeStats" element={<CafeStats />} />
+        <Route path="/commentManage" element={<CommentManage />} />
       </Routes>
     </Layout>
   );

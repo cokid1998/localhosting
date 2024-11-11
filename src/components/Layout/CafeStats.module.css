@@ -1,0 +1,166 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* 상단 네비바 */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0px 15px 9px;
+  background-color: white;
+}
+
+.title {
+  font-size: 16px;
+  text-align: center;
+  flex: 1;
+  padding-right: 24px;
+}
+
+/* 카페 배경 이미지 */
+.imgBox {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cafeImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 카페 흰색 부분 */
+.cafeContainer {
+  width: 100%;
+  height: calc(100vh - 320px);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: white;
+  position: relative;
+  top: -30px;
+  z-index: 1;
+}
+
+.cafeName {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 21px;
+  padding-top: 30px;
+}
+
+.cafeIntro {
+  font-size: 13px;
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
+/* 온도 */
+.temperature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0px 31px 21px;
+}
+
+.tempValue {
+  width: 48px;
+  color: #ff7f48;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.tempBar {
+  appearance: none;
+  width: 82%;
+  height: 11px;
+  border-radius: 45px;
+  outline: none;
+  background: #d9d9d9;
+  background: linear-gradient(
+    to right,
+    #ff7f48 0%,
+    #ff7f48 var(--value, 0%),
+    #d9d9d9 var(--value, 0%),
+    #d9d9d9 100%
+  );
+}
+
+.tempBar::-webkit-slider-thumb {
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ff7f48;
+  cursor: pointer;
+}
+
+/* 쿠폰 사용 횟수 */
+
+.couponContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.couponCard {
+  height: 117px;
+  width: 312px;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 2em;
+}
+
+.couponHeader {
+  width: 300px;
+  background-color: black;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: left;
+  margin-left: 6px;
+  position: relative;
+  bottom: -1px;
+}
+
+.couponContainer > .couponCard:first-child .couponHeader {
+  background-color: #ff7f48;
+  color: black;
+}
+
+.couponBody {
+  height: 82px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  justify-content: space-between;
+  padding: 0 23px 0 25px;
+}
+
+.couponContainer > .couponCard:first-child .couponBody {
+  border: 2px solid #ff7f48;
+}
+
+.couponLabel {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.couponValue {
+  font-size: 28px;
+  font-weight: bold;
+}
