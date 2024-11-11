@@ -72,7 +72,7 @@ function Signup() {
       ) && (
         //네비바
         <div className={styles.navbar}>
-          <Link to="/">
+          <Link to="/login">
             <ChevronLeft size={24} color="black" />
           </Link>
           <div className={styles.title}>회원가입</div>
@@ -211,9 +211,3 @@ function Signup() {
 }
 
 export default Signup;
-
-/*
-  2024.11.01
-  음... 다시 생각해보니 여기는 customer-signup / owenr-signup 주소를 각각 부여하는게 아니라
-  UserSelection부분이 사용자가 선택한 고객타입과 Step에 따라서 다르게 나오도록 하는게 나을꺼 같아요
-*/
