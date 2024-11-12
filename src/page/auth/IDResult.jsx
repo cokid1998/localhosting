@@ -1,4 +1,4 @@
-import styles from "@/components/Layout/IDResult.module.css";
+import styles from "@/styles/auth/IDResult.module.css";
 import { Link } from "react-router-dom";
 
 function IDResult() {

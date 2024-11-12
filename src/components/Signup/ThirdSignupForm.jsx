@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styles from "@/components/Layout/Signup.module.css";
-import "@/components/Layout/DatePickerCustom.css";
+import { useState } from "react";
+import styles from "@/styles/auth/Signup.module.css";
+import "@/styles/DatePickerCustom.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 

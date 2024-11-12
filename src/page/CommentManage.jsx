@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import styles from "@/components/Layout/CommentManage.module.css";
-import TestData2 from "@/page/test/TestData2.json";
+import { useState, useEffect } from "react";
+import styles from "@/styles/CommentManage.module.css";
+import TestData2 from "@/data/TestData2.json";
 import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 

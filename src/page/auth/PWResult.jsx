@@ -1,4 +1,4 @@
-import styles from "@/components/Layout/PWResult.module.css";
+import styles from "@/styles/auth/PWResult.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ChevronLeft } from "lucide-react";

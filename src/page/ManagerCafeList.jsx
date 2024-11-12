@@ -1,7 +1,7 @@
-import styles from "@/components/Layout/ManagerCafeList.module.css";
+import styles from "@/styles/ManagerCafeList.module.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import TestData from "@/page/test/TestData.json";
+import TestData from "@/data/TestData.json";
 import { ChevronLeft, Search, X } from "lucide-react";
 
 function ManagerCafeList() {

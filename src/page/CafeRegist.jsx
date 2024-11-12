@@ -1,4 +1,4 @@
-import styles from "@/components/Layout/CafeRegist.module.css";
+import styles from "@/styles/CafeRegist.module.css";
 import { useState } from "react";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -38,7 +38,6 @@ function CafeRegist() {
           <span>클릭 후 이미지를 등록해 주세요.</span>
         </div>
       </div>
-
 
       <div className={styles.inputContainer}>
         <div className={styles.inputGroup}>
@@ -86,7 +85,9 @@ function CafeRegist() {
                 {["월", "화", "수", "목", "금", "토", "일"].map((day) => (
                   <button
                     key={day}
-                    className={selectedDays.includes(day) ? styles.selected : ""}
+                    className={
+                      selectedDays.includes(day) ? styles.selected : ""
+                    }
                     onClick={() => toggleDay(day)}
                   >
                     {day}
@@ -99,15 +100,31 @@ function CafeRegist() {
               <div key={index} className={styles.timeInputs}>
                 <label>영업시간</label>
                 <div className={styles.timeRow}>
-                  <input type="number" inputMode="numeric" placeholder="00:00" />
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="00:00"
+                  />
                   <span>-</span>
-                  <input type="number" inputMode="numeric" placeholder="00:00" />
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="00:00"
+                  />
                 </div>
                 <label>휴게시간</label>
                 <div className={styles.timeRow}>
-                  <input type="number" inputMode="numeric" placeholder="00:00" />
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="00:00"
+                  />
                   <span>-</span>
-                  <input type="number" inputMode="numeric" placeholder="00:00" />
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="00:00"
+                  />
                 </div>
               </div>
             ))}
@@ -117,9 +134,7 @@ function CafeRegist() {
             </button>
           </div>
         ) : (
-          <div className={styles.tabContent}>
-            {}
-          </div>
+          <div className={styles.tabContent}>{}</div>
         )}
       </div>
     </div>
