@@ -39,88 +39,89 @@ function CafeRegist() {
         </div>
       </div>
 
-      <div className={styles.inputGroup}>
-        <label>카페 이름</label>
-        <input type="text" placeholder="카페 이름을 작성해 주세요." />
-      </div>
 
-      <div className={styles.tabs}>
-        <button
-          onClick={() => setActiveTab("cafeInfo")}
-          className={activeTab === "cafeInfo" ? styles.active : ""}
-        >
-          카페 영업 정보
-        </button>
-        <button
-          onClick={() => setActiveTab("menu")}
-          className={activeTab === "menu" ? styles.active : ""}
-        >
-          메뉴 등록
-        </button>
-      </div>
+      <div className={styles.inputContainer}>
+        <div className={styles.inputGroup}>
+          <label>카페 이름</label>
+          <input type="text" placeholder="카페 이름을 작성해 주세요." />
+        </div>
 
-      {activeTab === "cafeInfo" ? (
-        <div className={styles.tabContent}>
-          <div className={styles.inputGroup}>
-            <label>카페 고유 핀번호 설정</label>
-            <input
-              type="number"
-              inputMode="numeric"
-              placeholder="숫자 4자리를 입력해 주세요."
-            />
-          </div>
-          <div className={styles.inputGroup}>
-            <label>카페 소개글</label>
-            <textarea rows="2" placeholder="카페 소개글을 작성해 주세요." />
-          </div>
-          <div className={styles.inputGroup}>
-            <label>카페 위치</label>
-            <input type="text" placeholder="카페 위치를 입력해 주세요." />
-          </div>
-
-          <div className={styles.operatingDays}>
-            <label>영업일 선택</label>
-            <div className={styles.days}>
-              {["월", "화", "수", "목", "금", "토", "일"].map((day) => (
-                <button
-                  key={day}
-                  className={selectedDays.includes(day) ? styles.selected : ""}
-                  onClick={() => toggleDay(day)}
-                >
-                  {day}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {timeSets.map((_, index) => (
-            <div key={index} className={styles.timeInputs}>
-              <label>영업시간</label>
-              <input
-                type="number"
-                inputMode="numeric"
-                placeholder="00:00"
-              /> -{" "}
-              <input type="number" inputMode="numeric" placeholder="00:00" />
-              <label>휴게시간</label>
-              <input
-                type="number"
-                inputMode="numeric"
-                placeholder="00:00"
-              /> -{" "}
-              <input type="number" inputMode="numeric" placeholder="00:00" />
-            </div>
-          ))}
-
-          <button className={styles.addDayButton} onClick={addTimeSet}>
-            + 영업일 추가
+        <div className={styles.tabs}>
+          <button
+            onClick={() => setActiveTab("cafeInfo")}
+            className={activeTab === "cafeInfo" ? styles.active : ""}
+          >
+            카페 영업 정보
+          </button>
+          <button
+            onClick={() => setActiveTab("menu")}
+            className={activeTab === "menu" ? styles.active : ""}
+          >
+            메뉴 등록
           </button>
         </div>
-      ) : (
-        <div className={styles.tabContent}>
-          {}
-        </div>
-      )}
+
+        {activeTab === "cafeInfo" ? (
+          <div className={styles.tabContent}>
+            <div className={styles.inputGroup}>
+              <label>카페 고유 핀번호 설정</label>
+              <input
+                type="number"
+                inputMode="numeric"
+                placeholder="숫자 4자리를 입력해 주세요."
+              />
+            </div>
+            <div className={styles.inputGroup}>
+              <label>카페 소개글</label>
+              <textarea rows="2" placeholder="카페 소개글을 작성해 주세요." />
+            </div>
+            <div className={styles.inputGroup}>
+              <label>카페 위치</label>
+              <input type="text" placeholder="카페 위치를 입력해 주세요." />
+            </div>
+
+            <div className={styles.operatingDays}>
+              <label>영업일 선택</label>
+              <div className={styles.days}>
+                {["월", "화", "수", "목", "금", "토", "일"].map((day) => (
+                  <button
+                    key={day}
+                    className={selectedDays.includes(day) ? styles.selected : ""}
+                    onClick={() => toggleDay(day)}
+                  >
+                    {day}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {timeSets.map((_, index) => (
+              <div key={index} className={styles.timeInputs}>
+                <label>영업시간</label>
+                <div className={styles.timeRow}>
+                  <input type="number" inputMode="numeric" placeholder="00:00" />
+                  <span>-</span>
+                  <input type="number" inputMode="numeric" placeholder="00:00" />
+                </div>
+                <label>휴게시간</label>
+                <div className={styles.timeRow}>
+                  <input type="number" inputMode="numeric" placeholder="00:00" />
+                  <span>-</span>
+                  <input type="number" inputMode="numeric" placeholder="00:00" />
+                </div>
+              </div>
+            ))}
+
+            <button className={styles.addDayButton} onClick={addTimeSet}>
+              + 영업일 추가
+            </button>
+          </div>
+        ) : (
+          <div className={styles.tabContent}>
+            {}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
