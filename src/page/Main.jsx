@@ -11,24 +11,39 @@ import { ChevronRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import Distance from "@/components/Main/Distance";
 import AllCafeList from "@/components/Main/AllCafeList";
+import Test from "@/api/getTest";
 
 function Main() {
-  const [api, setApi] = useState();
+  const [carouselControl, setCarouselControl] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
+  const [testData, setTestData] = useState([]);
+
   useEffect(() => {
-    if (!api) {
+    const getTestData = async () => {
+      try {
+        const { data } = await Test();
+        setTestData(data);
+      } catch (error) {
+        window.alert(error);
+      }
+    };
+    getTestData();
+  }, []);
+
+  useEffect(() => {
+    if (!carouselControl) {
       return;
     }
 
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
+    setCount(carouselControl.scrollSnapList().length);
+    setCurrent(carouselControl.selectedScrollSnap() + 1);
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
+    carouselControl.on("select", () => {
+      setCurrent(carouselControl.selectedScrollSnap() + 1);
     });
-  }, [api]);
+  }, [carouselControl]);
 
   return (
     <div className="flex flex-col items-center">
@@ -38,7 +53,7 @@ function Main() {
         <Carousel
           opts={{ align: "start" }}
           className="w-full relative mb-[22px]"
-          setApi={setApi}
+          setApi={setCarouselControl}
           plugins={[Autoplay({ delay: 5000 })]}
         >
           <CarouselContent>
