@@ -1,6 +1,6 @@
 import styles from "@/styles/CafeRegist.module.css";
 import { useState } from "react";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 function CafeRegist() {
@@ -19,6 +19,10 @@ function CafeRegist() {
 
   const addTimeSet = () => {
     setTimeSets([...timeSets, {}]);
+  };
+
+  const removeTimeSet = (index) => {
+    setTimeSets(timeSets.filter((_, i) => i !== index));
   };
 
   const handleBack = () => {
@@ -79,59 +83,117 @@ function CafeRegist() {
               <input type="text" placeholder="카페 위치를 입력해 주세요." />
             </div>
 
-            <div className={styles.operatingDays}>
-              <label>영업일 선택</label>
-              <div className={styles.days}>
-                {["월", "화", "수", "목", "금", "토", "일"].map((day) => (
-                  <button
-                    key={day}
-                    className={
-                      selectedDays.includes(day) ? styles.selected : ""
-                    }
-                    onClick={() => toggleDay(day)}
-                  >
-                    {day}
-                  </button>
-                ))}
+            <div className={styles.timeSection}>
+              <div className={styles.operatingDays}>
+                <label>영업일 선택</label>
+                <div className={styles.days}>
+                  {["월", "화", "수", "목", "금", "토", "일"].map((day) => (
+                    <button
+                      key={day}
+                      className={
+                        selectedDays.includes(day) ? styles.selected : ""
+                      }
+                      onClick={() => toggleDay(day)}
+                    >
+                      {day}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className={styles.timeInputs}>
+                <div className={styles.timeRow}>
+                  <label>영업시간</label>
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="00:00"
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="00:00"
+                  />
+                </div>
+                <div className={styles.timeRow}>
+                  <label>휴게시간</label>
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="00:00"
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="00:00"
+                  />
+                </div>
               </div>
             </div>
-
-            {timeSets.map((_, index) => (
-              <div key={index} className={styles.timeInputs}>
-                <label>영업시간</label>
-                <div className={styles.timeRow}>
-                  <input
-                    type="number"
-                    inputMode="numeric"
-                    placeholder="00:00"
-                  />
-                  <span>-</span>
-                  <input
-                    type="number"
-                    inputMode="numeric"
-                    placeholder="00:00"
-                  />
-                </div>
-                <label>휴게시간</label>
-                <div className={styles.timeRow}>
-                  <input
-                    type="number"
-                    inputMode="numeric"
-                    placeholder="00:00"
-                  />
-                  <span>-</span>
-                  <input
-                    type="number"
-                    inputMode="numeric"
-                    placeholder="00:00"
-                  />
-                </div>
-              </div>
-            ))}
 
             <button className={styles.addDayButton} onClick={addTimeSet}>
               + 영업일 추가
             </button>
+
+            <hr className={styles.divider} />
+
+            {timeSets.slice(1).map((_, index) => (
+              <div key={index + 1} className={styles.additionalTimeSection}>
+                <button
+                  className={styles.removeButton}
+                  onClick={() => removeTimeSet(index + 1)}
+                >
+                  <X size={16} />
+                </button>
+                <div className={styles.operatingDays}>
+                  <label>영업일 선택</label>
+                  <div className={styles.days}>
+                    {["월", "화", "수", "목", "금", "토", "일"].map((day) => (
+                      <button
+                        key={day}
+                        className={
+                          selectedDays.includes(day) ? styles.selected : ""
+                        }
+                        onClick={() => toggleDay(day)}
+                      >
+                        {day}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className={styles.timeInputs}>
+                  <div className={styles.timeRow}>
+                    <label>영업시간</label>
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="00:00"
+                    />
+                    <span>-</span>
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="00:00"
+                    />
+                  </div>
+                  <div className={styles.timeRow}>
+                    <label>휴게시간</label>
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="00:00"
+                    />
+                    <span>-</span>
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="00:00"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         ) : (
           <div className={styles.tabContent}>{}</div>
