@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 function CafeRegist() {
   const [timeSets, setTimeSets] = useState([{ selectedDays: [] }]); // 각 섹션의 요일 선택 상태 포함
   const [activeTab, setActiveTab] = useState("cafeInfo");
-  const [menus, setMenus] = useState([{ name: "", price: "", description: "" }]);
+  const [menus, setMenus] = useState([
+    { name: "", price: "", description: "" },
+  ]);
   const navigate = useNavigate();
 
   const toggleDay = (index, day) => {
@@ -120,7 +122,9 @@ function CafeRegist() {
                       <button
                         key={day}
                         className={
-                          timeSet.selectedDays.includes(day) ? styles.selected : ""
+                          timeSet.selectedDays.includes(day)
+                            ? styles.selected
+                            : ""
                         }
                         onClick={() => toggleDay(index, day)}
                       >
@@ -132,15 +136,31 @@ function CafeRegist() {
                 <div className={styles.timeInputs}>
                   <div className={styles.timeRow}>
                     <label>영업시간</label>
-                    <input type="number" inputMode="numeric" placeholder="00:00" />
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="00:00"
+                    />
                     <span>-</span>
-                    <input type="number" inputMode="numeric" placeholder="00:00" />
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="00:00"
+                    />
                   </div>
                   <div className={styles.timeRow}>
                     <label>휴게시간</label>
-                    <input type="number" inputMode="numeric" placeholder="00:00" />
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="00:00"
+                    />
                     <span>-</span>
-                    <input type="number" inputMode="numeric" placeholder="00:00" />
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="00:00"
+                    />
                   </div>
                 </div>
               </div>
@@ -201,9 +221,6 @@ function CafeRegist() {
 
 export default CafeRegist;
 
-
-
-
 /**
  * 스크롤바가 생기지않게 만드세요
  * 탭에 주황색 border때문에 클릭한 탭의 텍스트가 계속 움직이는데 이부분을 방지해보세요
@@ -214,6 +231,17 @@ export default CafeRegist;
 
 /* 11.14
   - 시간 입력 부분 ":" 고정으로 나오는 부분 어떻게 해야 할지 모르겠어요 ㅠㅠ
+  ⮑ 일단 놔두시고 모든 숫자타입 input태그 오른쪽에 숫자 올려주는 UI삭제해보세요
+  ⮑ 핀번호, 영업시간, 휴게시간 input에 숫자 길이 4개만 넣을수있도록 제한해보세요
   - 뒤로가기 버튼을 눌렀을 때 로직이 어려워요...
+  ⮑ 뒤로가기 버튼에 로직을 넣을 필요가 있나요? 무슨 로직을 넣어야하나요?
   - 영업일 추가 버튼은 아래에 있는 게 나을 것 같아서 임의로 수정했는데 디자인대로 바꾸라고 하시면 다시 바꿀게요
+  ⮑ 음.. 십자가 크기 작아진거 말씀하시는건가요?
+
+  - 피그마엔 없는데 완료버튼을 다른 버튼처럼 주황색으로 만드는게 좋아보이네요. 변경해주세요
+  
+  - timeSets같이 서버에 보내는 데이터는 데이터 구조를 API에 맞게 맞춰야해요.
+  - 아직 서버가 완성된건 아니니까 다음에 비슷한 기능 만들때는 저 부분에 너무 시간을 할애하진 마세요.
+  - 이 부분은 나중에 만났을 때 설명해드릴께요
+  - 저 코드는 나중에 바꿔야할수도 있어요..ㅠㅠ
  */
