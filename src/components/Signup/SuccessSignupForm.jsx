@@ -13,7 +13,7 @@ function SuccessSignupForm() {
         <div className={styles.successMsg}>회원가입 성공!</div>
         <div className={styles.successMsg}>환영합니다</div>
         <button className={styles.loginBtn} onClick={handleLoginClick}>
-          로그인 하기
+          로그인하기
         </button>
       </div>
     </>
