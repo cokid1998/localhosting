@@ -10,6 +10,7 @@ import ManagerCafeList from "@/page/ManagerCafeList";
 import CafeRegist from "@/page/CafeRegist";
 import CafeStats from "@/page/CafeStats";
 import CommentManage from "@/page/CommentManage";
+import EditProfile from "@/page/EditMypage";
 /* Auth */
 import Login from "@/page/auth/Login";
 import FindId from "@/page/auth/FindId";
@@ -38,6 +39,7 @@ function App() {
         <Route path="/cafe-regist" element={<CafeRegist />} />
         <Route path="/cafeStats" element={<CafeStats />} />
         <Route path="/commentManage" element={<CommentManage />} />
+        <Route path="/editProfile" element={<EditProfile />} />
       </Routes>
     </Layout>
   );
