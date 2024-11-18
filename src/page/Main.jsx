@@ -11,32 +11,96 @@ import { ChevronRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import Distance from "@/components/Main/Distance";
 import AllCafeList from "@/components/Main/AllCafeList";
-import Test from "@/api/getTest";
+import {
+  deleteTest,
+  getTest,
+  patchTest,
+  postTest,
+  putTest,
+} from "@/api/APITest";
 
 function Main() {
   const [carouselControl, setCarouselControl] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
-  const [testData, setTestData] = useState([]);
+  const [getData, setGetData] = useState([]);
+  const [postData, setPostData] = useState([]);
+  const [deleteData, setDeleteData] = useState([]);
+  const [putData, setPutData] = useState([]);
+  const [patchData, setPatchData] = useState([]);
 
   useEffect(() => {
-    const getTestData = async () => {
+    const getDataFunc = async () => {
       try {
-        const { data } = await Test();
-        setTestData(data);
+        const { data, status } = await getTest();
+        setGetData([data]);
       } catch (error) {
         window.alert(error);
       }
     };
-    getTestData();
+
+    const postDataFunc = async () => {
+      try {
+        const { data, status } = await postTest();
+        setPostData([data]);
+      } catch (error) {
+        window.alert(error);
+      }
+    };
+
+    const deleteDataFunc = async () => {
+      try {
+        const { data, status } = await deleteTest();
+        setDeleteData([data]);
+      } catch (error) {
+        window.alert(error);
+      }
+    };
+
+    const putDataFunc = async () => {
+      try {
+        const { data, status } = await putTest();
+        setPutData([data]);
+      } catch (error) {
+        window.alert(error);
+      }
+    };
+
+    const patchDataFunc = async () => {
+      try {
+        const { data, status } = await patchTest();
+        setPatchData([data]);
+      } catch (error) {
+        window.alert(error);
+      }
+    };
+
+    getDataFunc();
+    postDataFunc();
+    deleteDataFunc();
+    putDataFunc();
+    patchDataFunc();
   }, []);
+
+  if (
+    getData.length &&
+    postData.length &&
+    deleteData.length &&
+    putData.length &&
+    patchData.length
+  ) {
+    console.log(`get: ${JSON.stringify(getData)}`);
+    console.log(`post: ${JSON.stringify(postData)}`);
+    console.log(`delete: ${JSON.stringify(deleteData)}`);
+    console.log(`put: ${JSON.stringify(putData)}`);
+    console.log(`patch: ${JSON.stringify(patchData)}`);
+  }
 
   useEffect(() => {
     if (!carouselControl) {
       return;
     }
-
     setCount(carouselControl.scrollSnapList().length);
     setCurrent(carouselControl.selectedScrollSnap() + 1);
 
