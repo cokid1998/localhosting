@@ -18,6 +18,7 @@ import FindPw from "@/page/auth/FindPw";
 import FindIDResult from "@/page/auth/IDResult";
 import FindPWResult from "@/page/auth/PWResult";
 import Signup from "@/page/auth/Signup";
+import Review from "@/page/Review";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/cafeStats" element={<CafeStats />} />
         <Route path="/commentManage" element={<CommentManage />} />
         <Route path="/editProfile" element={<EditProfile />} />
+        <Route path="/review" element={<Review />} />
       </Routes>
     </Layout>
   );
