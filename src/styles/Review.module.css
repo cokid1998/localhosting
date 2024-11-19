@@ -31,12 +31,12 @@
 
 .reviewContent {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: auto; 
   padding: 20px;
 }
 
 .reviewContent::-webkit-scrollbar {
-  display: none;
+  display: none; 
 }
 
 .cafeInfo {
@@ -160,7 +160,7 @@
   width: 89px;
   height: 89px;
   border: 1px solid #d9d9d9;
-  padding: 32px;
+  padding: 32px; 
   display: flex;
   align-items: center;
   justify-content: center;

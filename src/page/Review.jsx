@@ -20,6 +20,7 @@ function Review() {
   const handleTagClick = (category, tag) => {
     setSelectedTags((prev) => ({
       ...prev,
+      [category]: prev[category] === tag ? "" : tag,
     }));
   };
 
