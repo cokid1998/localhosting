@@ -40,47 +40,47 @@ function Main() {
       }
     };
 
-    const postDataFunc = async () => {
-      try {
-        const { data, status } = await postTest();
-        setPostData([data]);
-      } catch (error) {
-        window.alert(error);
-      }
-    };
+    // const postDataFunc = async () => {
+    //   try {
+    //     const { data, status } = await postTest();
+    //     setPostData([data]);
+    //   } catch (error) {
+    //     window.alert(error);
+    //   }
+    // };
 
-    const deleteDataFunc = async () => {
-      try {
-        const { data, status } = await deleteTest();
-        setDeleteData([data]);
-      } catch (error) {
-        window.alert(error);
-      }
-    };
+    // const deleteDataFunc = async () => {
+    //   try {
+    //     const { data, status } = await deleteTest();
+    //     setDeleteData([data]);
+    //   } catch (error) {
+    //     window.alert(error);
+    //   }
+    // };
 
-    const putDataFunc = async () => {
-      try {
-        const { data, status } = await putTest();
-        setPutData([data]);
-      } catch (error) {
-        window.alert(error);
-      }
-    };
+    // const putDataFunc = async () => {
+    //   try {
+    //     const { data, status } = await putTest();
+    //     setPutData([data]);
+    //   } catch (error) {
+    //     window.alert(error);
+    //   }
+    // };
 
-    const patchDataFunc = async () => {
-      try {
-        const { data, status } = await patchTest();
-        setPatchData([data]);
-      } catch (error) {
-        window.alert(error);
-      }
-    };
+    // const patchDataFunc = async () => {
+    //   try {
+    //     const { data, status } = await patchTest();
+    //     setPatchData([data]);
+    //   } catch (error) {
+    //     window.alert(error);
+    //   }
+    // };
 
     getDataFunc();
-    postDataFunc();
-    deleteDataFunc();
-    putDataFunc();
-    patchDataFunc();
+    // postDataFunc();
+    // deleteDataFunc();
+    // putDataFunc();
+    // patchDataFunc();
   }, []);
 
   if (
@@ -96,6 +96,7 @@ function Main() {
     console.log(`put: ${JSON.stringify(putData)}`);
     console.log(`patch: ${JSON.stringify(patchData)}`);
   }
+  console.log(`get: ${JSON.stringify(getData)}`);
 
   useEffect(() => {
     if (!carouselControl) {

@@ -1,7 +1,7 @@
 import API from "@/api/api";
 
 const getTest = async () => {
-  const res = await API.get("/posts/1");
+  const res = await API.get("/api/cafe/list");
   const { data, status } = res;
 
   return { data, status };
