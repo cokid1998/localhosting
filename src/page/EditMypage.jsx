@@ -95,3 +95,9 @@ function EditMypage() {
 }
 
 export default EditMypage;
+
+/**
+ * - 저번에 말한 input태그 border 해결한거 반영이 안된건가요? 이름 쓰는 input태그에 border가 생기네요 ㅠㅠ
+ * - 인강 목차 보니까 useReducer도 알려주는거 같던데 useReducer를 사용해서 로직을 단순화시켜보세요
+ * - CafeRegist페이지도 바꾸면 좋을꺼같긴한데 이 페이지는 좀 어려워 보여서 나중에 같이 해봐요 ㅎㅎ
+ */
