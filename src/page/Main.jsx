@@ -76,11 +76,11 @@ function Main() {
       }
     };
 
-    getDataFunc();
-    postDataFunc();
-    deleteDataFunc();
-    putDataFunc();
-    patchDataFunc();
+    // getDataFunc();
+    // postDataFunc();
+    // deleteDataFunc();
+    // putDataFunc();
+    // patchDataFunc();
   }, []);
 
   if (
