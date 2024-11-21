@@ -76,7 +76,7 @@ function Main() {
     //   }
     // };
 
-    getDataFunc();
+    // getDataFunc();
     // postDataFunc();
     // deleteDataFunc();
     // putDataFunc();
