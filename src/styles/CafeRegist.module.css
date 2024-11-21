@@ -29,12 +29,14 @@
 }
 
 .completeButton {
-  font-size: 16px;
-  color: #ff7f48;
-  background: none;
+  font-size: 14px;
+  padding: 5px 12px;
+  background-color: #ff7f48;
+  color: white;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  margin-right: 18px;
+  margin-right: 16px;
 }
 
 .imageUpload {
@@ -79,8 +81,7 @@
   margin-bottom: 16px;
 }
 
-input[type="text"],
-input[type="number"] {
+.input {
   width: 100%;
   padding: 7px 10px;
   margin-top: 11px;
@@ -88,8 +89,6 @@ input[type="number"] {
   border-radius: 5px;
   font-size: 13px;
 }
-
-
 
 .inputGroup label {
   color: #525252;
@@ -268,13 +267,13 @@ input[type="number"] {
 
 .menuSection h2 {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 13px;
   margin-bottom: 1px;
   margin-left: 10px;
 }
 
 .menuSection p {
-  font-size: 13px;
+  font-size: 11px;
   margin: 0;
   margin-left: 10px;
 }

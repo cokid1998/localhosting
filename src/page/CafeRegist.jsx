@@ -73,7 +73,7 @@ function CafeRegist() {
       <div className={styles.inputContainer}>
         <div className={styles.inputGroup}>
           <label>카페 이름</label>
-          <input type="text" placeholder="카페 이름을 작성해 주세요." />
+          <input type="text" className={styles.input} placeholder="카페 이름을 작성해 주세요." />
         </div>
 
         <div className={styles.tabs}>
@@ -98,6 +98,7 @@ function CafeRegist() {
               <input
                 type="text"
                 value={pinNumber}
+                className={styles.input}
                 onChange={(e) => handleTextInputChange(e, setPinNumber)}
                 placeholder="숫자 4자리를 입력해 주세요."
               />
@@ -108,7 +109,7 @@ function CafeRegist() {
             </div>
             <div className={styles.inputGroup}>
               <label>카페 위치</label>
-              <input type="text" placeholder="카페 위치를 입력해 주세요." />
+              <input type="text" className={styles.input} placeholder="카페 위치를 입력해 주세요." />
             </div>
 
             {timeSets.map((timeSet, index) => (
@@ -152,6 +153,7 @@ function CafeRegist() {
                     <input
                       type="text"
                       value={openingTime}
+                      className={styles.input}
                       onChange={(e) => handleTextInputChange(e, setOpeningTime)}
                       placeholder="00:00"
                     />
@@ -159,6 +161,7 @@ function CafeRegist() {
                     <input
                       type="text"
                       value={closingTime}
+                      className={styles.input}
                       onChange={(e) => handleTextInputChange(e, setClosingTime)}
                       placeholder="00:00"
                     />
@@ -168,6 +171,7 @@ function CafeRegist() {
                     <input
                       type="text"
                       value={breakStartTime}
+                      className={styles.input}
                       onChange={(e) => handleTextInputChange(e, setBreakStartTime)}
                       placeholder="00:00"
                     />
@@ -175,6 +179,7 @@ function CafeRegist() {
                     <input
                       type="text"
                       value={breakEndTime}
+                      className={styles.input}
                       onChange={(e) => handleTextInputChange(e, setBreakEndTime)}
                       placeholder="00:00"
                     />
@@ -207,16 +212,19 @@ function CafeRegist() {
                   <div className={styles.inputFields}>
                     <input
                       type="text"
+                      className={styles.input}
                       placeholder="메뉴 이름을 입력하세요."
                       value={menu.name}
                     />
                     <input
                       type="text"
+                      className={styles.input}
                       placeholder="가격을 입력하세요."
                       value={menu.price}
                     />
                     <input
                       type="text"
+                      className={styles.input}
                       placeholder="메뉴 설명을 입력하세요."
                       value={menu.description}
                     />
