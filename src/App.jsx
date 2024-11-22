@@ -11,6 +11,7 @@ import CafeRegist from "@/page/CafeRegist";
 import CafeStats from "@/page/CafeStats";
 import CommentManage from "@/page/CommentManage";
 import EditProfile from "@/page/EditMypage";
+import Purchase from "@/page/Purchase";
 /* Auth */
 import Login from "@/page/auth/Login";
 import FindId from "@/page/auth/FindId";
@@ -42,6 +43,7 @@ function App() {
         <Route path="/commentManage" element={<CommentManage />} />
         <Route path="/editProfile" element={<EditProfile />} />
         <Route path="/review" element={<Review />} />
+        <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </Layout>
   );
