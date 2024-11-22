@@ -28,6 +28,19 @@ function Review() {
     navigate(-1);
   };
 
+  const getTags = (category) => {
+    switch (category) {
+      case "맛":
+        return ["😍 맛있어요", "☺️ 괜찮아요", "😖 별로예요"];
+      case "서비스":
+        return ["🤗 친절해요", "☺️ 좋아요", "😢 불친절해요"];
+      case "위생":
+        return ["✨ 매장이 청결해요", "🤔 위생 상태가 별로예요"];
+      default:
+        return [];
+    }
+  };
+
   return (
     <div className={styles.reviewContainer}>
       <header className={styles.navbar}>
@@ -68,30 +81,17 @@ function Review() {
           {["맛", "서비스", "위생"].map((category) => (
             <div key={category} className={styles.category}>
               <h4>{category}</h4>
-              <button
-                className={`${styles.tag} ${
-                  selectedTags[category] === "positive" ? styles.positive : ""
-                }`}
-                onClick={() => handleTagClick(category, "positive")}
-              >
-                {category === "맛"
-                  ? "😍 맛있어요"
-                  : category === "서비스"
-                  ? "😊 친절해요"
-                  : "✨ 매장이 청결해요"}
-              </button>
-              <button
-                className={`${styles.tag} ${
-                  selectedTags[category] === "negative" ? styles.negative : ""
-                }`}
-                onClick={() => handleTagClick(category, "negative")}
-              >
-                {category === "맛"
-                  ? "😞 별로예요"
-                  : category === "서비스"
-                  ? "😟 불친절해요"
-                  : "🙁 위생 상태가 별로예요"}
-              </button>
+              {getTags(category).map((tag) => (
+                <button
+                  key={tag}
+                  className={`${styles.tag} ${
+                    selectedTags[category] === tag ? styles.active : ""
+                  }`}
+                  onClick={() => handleTagClick(category, tag)}
+                >
+                  {tag}
+                </button>
+              ))}
             </div>
           ))}
         </section>

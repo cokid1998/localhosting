@@ -121,15 +121,10 @@
   cursor: pointer;
 }
 
-.tag.positive {
+.tag.active {
   background-color: #ffece5;
   border: 1px solid #ff7f50;
   color: #ff7f50;
-}
-
-.tag.negative {
-  background-color: #f0f0f0;
-  border: 1px solid #dadada;
 }
 
 .reviewWrite h3,
