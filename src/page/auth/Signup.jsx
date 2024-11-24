@@ -119,13 +119,13 @@ function Signup() {
       {currentStep === 1 && (
         <>
           {/* 메세지 */}
-          <div className={styles.chooseMsg}>회원타입을 선택해주세요</div>
+          <div className={styles.chooseMsg}>회원 타입을 선택해 주세요</div>
           {/* 유저 타입 선택 */}
           <div className={styles.UserSelection}>
             <UserCard
               type="고객님"
               title="일반 회원"
-              description="구독권을 구매를 원하시는"
+              description="구독권 구매를 원하시는"
               image={customerImage}
               onClick={() => handleSelection("customer")}
               selected={selectedType === "customer"}
@@ -133,7 +133,7 @@ function Signup() {
             <UserCard
               type="사장님"
               title="사장님 회원"
-              description="카페를 운영중이신"
+              description="카페를 운영 중이신"
               image={ownerImage}
               onClick={() => handleSelection("owner")}
               selected={selectedType === "owner"}

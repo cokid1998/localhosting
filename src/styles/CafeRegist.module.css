@@ -29,23 +29,28 @@
 }
 
 .completeButton {
-  font-size: 16px;
-  color: black;
-  background: none;
+  font-size: 14px;
+  padding: 5px 12px;
+  background-color: #ff7f48;
+  color: white;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  margin-right: 18px;
+  margin-right: 16px;
 }
 
 .imageUpload {
-  /* margin: 16px 0; */
   display: flex;
   justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .imagePlaceholder {
   width: 100%;
   height: 230px;
+  display: flex;
+  flex-direction: column;
   background-color: #d9d9d9;
   display: flex;
   align-items: center;
@@ -54,22 +59,29 @@
   font-size: 13px;
 }
 
+.imageUpload span {
+  margin-top: 10px;
+}
+
 .inputContainer {
   background-color: white;
   border-radius: 20px 20px 0 0;
   overflow: hidden;
-  padding: 16px;
+  overflow-y: auto;
+  padding: 20px;
   margin-top: -20px;
   margin-bottom: 50px;
-  overflow-y: auto;
+}
+
+.inputContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .inputGroup {
   margin-bottom: 16px;
 }
 
-input[type="text"],
-input[type="number"] {
+.input {
   width: 100%;
   padding: 7px 10px;
   margin-top: 11px;
@@ -96,7 +108,7 @@ input[type="number"] {
 }
 
 .inputGroup::placeholder {
-  color: #D4D4D4;
+  color: #d4d4d4;
 }
 
 .tabs {
@@ -111,13 +123,14 @@ input[type="number"] {
   background: none;
   border: none;
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
-  border-bottom: 2px solid transparent;
+  border-top: 3px solid transparent;
+  margin-top: 16px;
 }
 
 .tabs .active {
-  border-top: 3px solid #FF7F48;
+  border-top: 3px solid #ff7f48;
+  font-weight: bold;
 }
 
 .tabContent {
@@ -147,15 +160,17 @@ input[type="number"] {
   width: 39px;
   height: 39px;
   padding: 12px;
-  /* border: 1px solid #ddd; */
   border-radius: 50%;
-  background-color: #E3E3E3;
+  background-color: #e3e3e3;
   cursor: pointer;
   font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .days button.selected {
-  background-color: #FF7F48;
+  background-color: #ff7f48;
   color: white;
   border: none;
 }
@@ -166,36 +181,236 @@ input[type="number"] {
   margin-top: 8px;
 }
 
-.timeInputs label {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
 .timeRow {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
+  margin-top: 8px;
 }
 
 .timeRow input {
   width: 90px;
-  
+  margin-top: 2px;
+  padding-left: 27px;
+  font-size: 11px;
+  color: black;
 }
 
+.timeRow label {
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
 
 .addDayButton {
   margin-top: 16px;
   padding: 12px;
   width: 100%;
-  background-color: #FF7F48;
+  background-color: #ff7f48;
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 5px;
+  font-size: 13px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.divider {
+  border: none;
+  border-top: 5px solid #d9d9d9;
+  margin: 16px -20px;
+  position: relative;
+}
+
+.additionalTimeSection {
+  padding: 11px;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  margin-top: 16px;
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+  background-color: white;
+}
+
+.removeButton {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: none;
+  border: 1px solid #dadada;
+  color: #dadada;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menuSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.menuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menuInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuSection h2 {
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 1px;
+  margin-left: 10px;
+}
+
+.menuSection p {
+  font-size: 11px;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.menuFields {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menuSection input[type="text"] {
+  width: 100%;
+  padding: 8px 7px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 11px;
+  color: black;
+}
+
+.input::placeholder {
+  color: #d4d4d4;
+  font-size: 11px;
+}
+
+.imageUploadButton {
+  width: 120px;
+  height: 120px;
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #7d7d7d;
+  font-size: 13px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-left: 45px;
+  margin-right: 10px;
+}
+
+.imageUploadButton span {
+  margin-top: 2px;
+}
+
+.addMenuButton {
+  background-color: #ff7f48;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-right: 10px;
+}
+
+.sectionSeparator {
+  border: none;
+  border-top: 1px solid #d9d9d9;
+  margin-top: 10px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 35px 20px 20px;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.modal h3 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.modal p {
+  font-size: 11px;
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #757575;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.resetButton {
+  width: 134px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 28px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.saveButton {
+  width: 134px;
+  background-color: #ff7f48;
+  color: white;
+  border: none;
+  border-radius: 28px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }

@@ -10,6 +10,8 @@ import ManagerCafeList from "@/page/ManagerCafeList";
 import CafeRegist from "@/page/CafeRegist";
 import CafeStats from "@/page/CafeStats";
 import CommentManage from "@/page/CommentManage";
+import EditProfile from "@/page/EditMypage";
+import Purchase from "@/page/Purchase";
 /* Auth */
 import Login from "@/page/auth/Login";
 import FindId from "@/page/auth/FindId";
@@ -17,6 +19,7 @@ import FindPw from "@/page/auth/FindPw";
 import FindIDResult from "@/page/auth/IDResult";
 import FindPWResult from "@/page/auth/PWResult";
 import Signup from "@/page/auth/Signup";
+import Review from "@/page/Review";
 
 function App() {
   return (
@@ -38,6 +41,9 @@ function App() {
         <Route path="/cafe-regist" element={<CafeRegist />} />
         <Route path="/cafeStats" element={<CafeStats />} />
         <Route path="/commentManage" element={<CommentManage />} />
+        <Route path="/editProfile" element={<EditProfile />} />
+        <Route path="/review" element={<Review />} />
+        <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </Layout>
   );
