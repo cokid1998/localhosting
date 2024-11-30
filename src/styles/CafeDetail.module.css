@@ -54,6 +54,7 @@
   justify-content: center;
   color: #7d7d7d;
   font-size: 13px;
+  object-fit: cover;
 }
 
 .contentContainer {
@@ -61,7 +62,7 @@
   border-radius: 20px 20px 0 0;
   padding: 16px;
   margin-top: -20px;
-  margin-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 .contentHeader {
