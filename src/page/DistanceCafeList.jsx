@@ -1,7 +1,5 @@
 import styles from "@/styles/CafeList.module.css";
-import TestData from "@/data/TestData.json";
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 import { getAllCafe } from "@/api/cafeAPI";
 import { useQuery } from "@tanstack/react-query";

@@ -1,22 +1,18 @@
 import styles from "@/styles/CafeList.module.css";
-import TestData from "@/data/TestData.json";
-import { useState } from "react";
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
+import { getAllCafe } from "@/api/cafeAPI";
+import { useQuery } from "@tanstack/react-query";
 
 function CafeList() {
-  const [cafes, setCafes] = useState([]);
+  const { data: cafes, isLoading } = useQuery({
+    queryKey: ["CafeList"],
+    queryFn: getAllCafe,
+  });
 
-  useEffect(() => {
-    // const fetchData = async () => {
-    //   const response = await fetch("해당하는 API 삽입");
-    //   const data = response.json();
-    //   setCafes(data);
-    // };
-    // fetchData();
-    setCafes(TestData);
-  }, []);
+  if (isLoading) return null;
+
+  const data = cafes.data.data.cafes;
 
   return (
     <div className={styles.container}>
@@ -27,24 +23,27 @@ function CafeList() {
         <div className={styles.title}>전체 카페</div>
       </div>
       <div className={styles.cafeList}>
-        {cafes.map((cafe, index) => (
-          <div
-            key={cafe.id}
+        {data.map((cafe, index) => (
+          <Link
+            to={`/cafe/${index + 100}`}
+            key={cafe.cafeId}
             className={styles.cafeItem}
-            // style={index === cafes.length - 1 ? { borderBottom: "none" } : {}}
           >
             <div className={styles.cafeImage}>
-              <img src={cafe.image} className={styles.image} />
+              <img
+                className={styles.image}
+                src="https://media.istockphoto.com/id/1428594094/photo/empty-coffee-shop-interior-with-wooden-tables-coffee-maker-pastries-and-pendant-lights.jpg?s=612x612&w=0&k=20&c=dMqeYCJDs3BeBP_jv93qHRISDt-54895SPoVc6_oJt4="
+              />
             </div>
             <div className={styles.cafeInfo}>
-              <div className={styles.cafeName}>{cafe.name}</div>
+              <div className={styles.cafeName}>{cafe.cafeName}</div>
               <div className={styles.cafeDescription}>{cafe.description}</div>
               <div className={styles.cafeMeta}>
-                <span className={styles.temperature}>{cafe.temperature}</span>
-                <span className={styles.distance}>{cafe.distance}</span>
+                <span className={styles.temperature}>00.0°c</span>
+                <span className={styles.distance}>000km</span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

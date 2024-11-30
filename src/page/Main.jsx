@@ -40,7 +40,9 @@ function Main() {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="my-[16px] font-medium text-[16px]">프로젝트이름</h1>
+      <Link to={"/"} className="my-[16px] font-medium text-[16px]">
+        Localhosting
+      </Link>
 
       <div className="w-full">
         <Carousel

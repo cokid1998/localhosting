@@ -33,7 +33,7 @@ function Distance({ cafeData }) {
         </div>
       </Link>
 
-      <Link to="/rank">
+      <Link to="/rank" state={{ cafes }}>
         <div className="flex flex-col">
           <div className="flex flex-col items-center">
             <div className="w-[156px] pl-[16px] py-[10px] bg-black text-white font-bold text-[17px] rounded-t-[10px] relative">
