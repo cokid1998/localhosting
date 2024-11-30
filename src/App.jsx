@@ -21,31 +21,41 @@ import FindPWResult from "@/page/auth/PWResult";
 import Signup from "@/page/auth/Signup";
 import Review from "@/page/Review";
 
+/* React-query dev tools*/
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/cafeList" element={<CafeList />} />
-        <Route path="/cafe/:id" element={<CafeDetail />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/mypage" element={<Mypage />} />
-        <Route path="/distance" element={<DistanceCafeList />} />
-        <Route path="/rank" element={<Rank />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/find-id" element={<FindId />} />
-        <Route path="/find-password" element={<FindPw />} />
-        <Route path="/managerCafeList" element={<ManagerCafeList />} />
-        <Route path="/find-id-result" element={<FindIDResult />} />
-        <Route path="/find-pw-result" element={<FindPWResult />} />
-        <Route path="/cafe-regist" element={<CafeRegist />} />
-        <Route path="/cafeStats" element={<CafeStats />} />
-        <Route path="/commentManage" element={<CommentManage />} />
-        <Route path="/editProfile" element={<EditProfile />} />
-        <Route path="/review" element={<Review />} />
-        <Route path="/purchase" element={<Purchase />} />
-      </Routes>
-    </Layout>
+    <QueryClientProvider client={queryClient}>
+      {/* The rest of your application */}
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/cafeList" element={<CafeList />} />
+          <Route path="/cafe/:id" element={<CafeDetail />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/mypage" element={<Mypage />} />
+          <Route path="/distance" element={<DistanceCafeList />} />
+          <Route path="/rank" element={<Rank />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/find-id" element={<FindId />} />
+          <Route path="/find-password" element={<FindPw />} />
+          <Route path="/managerCafeList" element={<ManagerCafeList />} />
+          <Route path="/find-id-result" element={<FindIDResult />} />
+          <Route path="/find-pw-result" element={<FindPWResult />} />
+          <Route path="/cafe-regist" element={<CafeRegist />} />
+          <Route path="/cafeStats" element={<CafeStats />} />
+          <Route path="/commentManage" element={<CommentManage />} />
+          <Route path="/editProfile" element={<EditProfile />} />
+          <Route path="/review" element={<Review />} />
+          <Route path="/purchase" element={<Purchase />} />
+        </Routes>
+      </Layout>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 

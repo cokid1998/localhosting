@@ -11,26 +11,18 @@ import { ChevronRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import Distance from "@/components/Main/Distance";
 import AllCafeList from "@/components/Main/AllCafeList";
-import { getCafes } from "@/api/cafeAPI";
+import { getAllCafe } from "@/api/cafeAPI";
+import { useQuery } from "@tanstack/react-query";
 
 function Main() {
   const [carouselControl, setCarouselControl] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-  const [cafes, setCafes] = useState([]);
 
-  useEffect(() => {
-    const getCafesData = async () => {
-      try {
-        const { data, status } = await getCafes();
-        setCafes([data]);
-      } catch (error) {
-        window.alert(error);
-      }
-    };
-
-    getCafesData();
-  }, []);
+  const { data: cafes, isLoading } = useQuery({
+    queryKey: ["cafes"],
+    queryFn: getAllCafe,
+  });
 
   useEffect(() => {
     if (!carouselControl) {
@@ -43,6 +35,8 @@ function Main() {
       setCurrent(carouselControl.selectedScrollSnap() + 1);
     });
   }, [carouselControl]);
+
+  if (isLoading) return null;
 
   return (
     <div className="flex flex-col items-center">
@@ -87,7 +81,7 @@ function Main() {
           </Link>
 
           <div className="flex gap-[15px] overflow-auto mobile:scrollbar-hide">
-            <AllCafeList />
+            <AllCafeList cafeData={cafes} />
           </div>
         </div>
       </div>
