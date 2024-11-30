@@ -2,7 +2,8 @@ import { Footprints } from "lucide-react";
 import UpAndCircle from "@/assets/svg/Main/UpAndCircle.svg";
 import { Link } from "react-router-dom";
 
-function Distance() {
+function Distance({ cafeData }) {
+  // const { cafes } = cafeData[0].data;
   return (
     <>
       <Link to="/distance">
@@ -20,7 +21,7 @@ function Distance() {
             </div>
             <div className="-top-[10px] relative bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px] [clip-path:polygon(0_4%,100%_0,100%_100%,0%_100%)]"></div>
           </div>
-          <h3 className="ml-[4px] font-semibold">카페이름</h3>
+          <h3 className="ml-[4px] font-semibold">{cafes[0].cafeName}</h3>
         </div>
       </Link>
 
@@ -33,7 +34,7 @@ function Distance() {
             </div>
             <div className="-top-[10px] relative bg-[#d9d9d9] w-[165px] h-[152px] rounded-[10px] [clip-path:polygon(0_4%,100%_0,100%_100%,0%_100%)]"></div>
           </div>
-          <h3 className="ml-[4px] font-semibold">카페이름</h3>
+          <h3 className="ml-[4px] font-semibold">{cafes[1].cafeName}</h3>
         </div>
       </Link>
     </>

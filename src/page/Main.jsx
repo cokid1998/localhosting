@@ -11,92 +11,26 @@ import { ChevronRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import Distance from "@/components/Main/Distance";
 import AllCafeList from "@/components/Main/AllCafeList";
-import {
-  deleteTest,
-  getTest,
-  patchTest,
-  postTest,
-  putTest,
-} from "@/api/APITest";
+import { getCafes } from "@/api/cafeAPI";
 
 function Main() {
   const [carouselControl, setCarouselControl] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-
-  const [getData, setGetData] = useState([]);
-  const [postData, setPostData] = useState([]);
-  const [deleteData, setDeleteData] = useState([]);
-  const [putData, setPutData] = useState([]);
-  const [patchData, setPatchData] = useState([]);
+  const [cafes, setCafes] = useState([]);
 
   useEffect(() => {
-    const getDataFunc = async () => {
+    const getCafesData = async () => {
       try {
-        const { data, status } = await getTest();
-        setGetData([data]);
+        const { data, status } = await getCafes();
+        setCafes([data]);
       } catch (error) {
         window.alert(error);
       }
     };
 
-    // const postDataFunc = async () => {
-    //   try {
-    //     const { data, status } = await postTest();
-    //     setPostData([data]);
-    //   } catch (error) {
-    //     window.alert(error);
-    //   }
-    // };
-
-    // const deleteDataFunc = async () => {
-    //   try {
-    //     const { data, status } = await deleteTest();
-    //     setDeleteData([data]);
-    //   } catch (error) {
-    //     window.alert(error);
-    //   }
-    // };
-
-    // const putDataFunc = async () => {
-    //   try {
-    //     const { data, status } = await putTest();
-    //     setPutData([data]);
-    //   } catch (error) {
-    //     window.alert(error);
-    //   }
-    // };
-
-    // const patchDataFunc = async () => {
-    //   try {
-    //     const { data, status } = await patchTest();
-    //     setPatchData([data]);
-    //   } catch (error) {
-    //     window.alert(error);
-    //   }
-    // };
-
-    getDataFunc();
-    // postDataFunc();
-    // deleteDataFunc();
-    // putDataFunc();
-    // patchDataFunc();
+    getCafesData();
   }, []);
-
-  if (
-    getData.length &&
-    postData.length &&
-    deleteData.length &&
-    putData.length &&
-    patchData.length
-  ) {
-    console.log(`get: ${JSON.stringify(getData)}`);
-    console.log(`post: ${JSON.stringify(postData)}`);
-    console.log(`delete: ${JSON.stringify(deleteData)}`);
-    console.log(`put: ${JSON.stringify(putData)}`);
-    console.log(`patch: ${JSON.stringify(patchData)}`);
-  }
-  console.log(`get: ${JSON.stringify(getData)}`);
 
   useEffect(() => {
     if (!carouselControl) {
@@ -139,7 +73,7 @@ function Main() {
           </h2>
 
           <div className="flex gap-[15px]">
-            <Distance />
+            <Distance cafeData={cafes} />
           </div>
         </div>
 
@@ -165,3 +99,4 @@ export default Main;
 
 // Todo: clip-path부분 rounded처리
 // scroll되면 "지금 많이 찾는 카페 쪽은 스크롤 안되게"
+// 렌더링 최적화 지금 배너가 옆으로 넘어가면 컴포넌트가 모두 렌더링 됨
