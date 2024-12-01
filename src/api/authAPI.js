@@ -13,7 +13,6 @@ export const signUpAPI = async (userInfo) => {
   const res = await API.post("/api/user/register", {
     ...userInfo,
   });
-  console.log(res);
 
   return res;
 };

@@ -209,14 +209,15 @@ CafeDetail.Menu = () => {
 CafeDetail.Menu.displayName = "Menu";
 
 CafeDetail.Review = ({ data }) => {
-  console.log(data.data.data);
+  const arr = data.data.data;
+  console.log(arr);
 
   const handleReport = () => {
     console.log("신고 버튼 클릭");
   };
   return (
     <>
-      {data.data.data.map((item) => {
+      {arr.map((item) => {
         return (
           <div
             key={item.reviewId}
