@@ -3,6 +3,7 @@ import coffeeIcon from "@/assets/image/Login/coffeeIcon.png";
 import { Coffee } from "lucide-react/";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { loginAPI } from "@/api/authAPI";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -16,8 +17,7 @@ function LoginPage() {
   };
 
   const handleLogin = () => {
-    console.log("ID: ", username);
-    console.log("PassWord: ", password);
+    loginAPI(username, password);
   };
 
   return (

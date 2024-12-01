@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "@/styles/auth/Signup.module.css";
 
-function SecondSignupForm() {
+function SecondSignupForm({ userInfo, dispatch }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [domain, setDomain] = useState("");
@@ -10,25 +10,9 @@ function SecondSignupForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [matchPassword, setMatchPassword] = useState(null);
 
-  const handleDomainChange = (e) => {
-    const value = e.target.value;
-    if (value === "custom") {
-      setDomain("");
-      setCustomDomain(true);
-    } else {
-      setDomain(value);
-      setCustomDomain(false);
-    }
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-    checkPasswordMatch(e.target.value, confirmPassword);
-  };
-
   const handleConfirmPasswordChange = (e) => {
     setConfirmPassword(e.target.value);
-    checkPasswordMatch(password, e.target.value);
+    checkPasswordMatch(userInfo.password, e.target.value);
   };
 
   const checkPasswordMatch = (pass, confirmPass) => {
@@ -39,24 +23,29 @@ function SecondSignupForm() {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("회원 정보: ", { name, email, domain, password });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    dispatch({
+      type: "SET_FIELD",
+      field: name,
+      value,
+    });
   };
 
   return (
     <div className={styles.container}>
       {/* 회원가입 폼 */}
       <div className={styles.formContainer}>
-        <form className={styles.singupForm} onSubmit={handleSubmit}>
+        <form className={styles.singupForm}>
           <div className={styles.groupForm}>
             <label htmlFor="name">이름</label>
             <input
               type="text"
-              id="name"
+              name="name"
               placeholder="이름을 입력해 주세요!"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={userInfo.name}
+              onChange={handleChange}
             />
           </div>
 
@@ -65,23 +54,25 @@ function SecondSignupForm() {
             <div className={styles.inputEmailGroup}>
               <input
                 type="text"
-                id="email"
+                name="email"
                 placeholder="이메일"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={userInfo.email}
+                onChange={handleChange}
               />
               <span>@</span>
               {customDomain ? (
                 <input
                   type="text"
+                  name="domain"
                   placeholder="직접 입력"
                   value={domain}
-                  onChange={(e) => setDomain(e.target.value)}
+                  onChange={handleChange}
                 />
               ) : (
                 <select
-                  value={domain}
-                  onChange={handleDomainChange}
+                  value={userInfo.domain}
+                  name="domain"
+                  onChange={handleChange}
                   className={styles.domainSelect}
                 >
                   <option value="" disabled>
@@ -102,10 +93,10 @@ function SecondSignupForm() {
             <label htmlFor="password">비밀번호</label>
             <input
               type="password"
-              id="password"
+              name="password"
               placeholder="비밀번호를 설정해 주세요!"
-              value={password}
-              onChange={handlePasswordChange}
+              value={userInfo.password}
+              onChange={handleChange}
             />
           </div>
 

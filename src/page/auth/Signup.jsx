@@ -1,12 +1,13 @@
 import styles from "@/styles/auth/Signup.module.css";
 import { Link } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
-import { useState } from "react";
+import { useState, useReducer, useEffect } from "react";
 import customerImage from "@/components/img/고객님.png";
 import ownerImage from "@/components/img/사장님.png";
 import SecondSignupForm from "@/components/Signup/SecondSignupForm.jsx";
 import ThirdSignupForm from "@/components/Signup/ThirdSignupForm.jsx";
 import SuccessSignupForm from "@/components/Signup/SuccessSignupForm.jsx";
+import { signUpAPI } from "@/api/authAPI";
 
 function ThreeDot() {
   return (
@@ -41,9 +42,62 @@ const UserCard = ({ type, title, description, image, onClick, selected }) => {
   );
 };
 
+const customerInit = {
+  name: "",
+  email: "",
+  password: "",
+  nickName: "",
+  username: "",
+  domain: "",
+  businessNumber: "string1",
+  bankAccount: "string2",
+  openingDate: "2024-11-29",
+  bName: "string4",
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "SET_FIELD":
+      if (action.field === "name") {
+        return {
+          ...state,
+          [action.field]: action.value,
+          nickName: action.value,
+        };
+      } else if (action.field === "email") {
+        return {
+          ...state,
+          [action.field]: action.value,
+          username: action.value,
+        };
+      }
+      return {
+        ...state,
+        [action.field]: action.value,
+      };
+
+    case "SELECT_EMAIL_DOMAIN": {
+      return {
+        ...state,
+        [action.field]: action.value,
+      };
+    }
+    case "RESET":
+      return action.payload;
+  }
+};
+
 function Signup() {
   const [selectedType, setSelectedType] = useState(null); //타입 관리
   const [currentStep, setCurrentStep] = useState(1); //단계 관리
+  const [userInfo, dispatch] = useReducer(reducer, customerInit);
+
+  useEffect(() => {
+    dispatch({
+      type: "RESET",
+      payload: customerInit,
+    });
+  }, [selectedType]);
 
   const handleSelection = (type) => {
     setSelectedType(type);
@@ -55,6 +109,28 @@ function Signup() {
     } else if (selectedType === "owner" && currentStep < 4) {
       setCurrentStep(currentStep + 1);
     }
+  };
+
+  const handleSubmit = async () => {
+    const payload = {
+      ...userInfo,
+      email: `${userInfo.email}@${userInfo.domain}`,
+    };
+    delete payload.domain;
+
+    setCurrentStep(currentStep + 1);
+    await signUpAPI(payload);
+  };
+
+  const buttonHandler = () => {
+    if (
+      (selectedType === "customer" && currentStep === 2) ||
+      (selectedType === "owner" && currentStep === 3)
+    ) {
+      return handleSubmit;
+    }
+
+    return handleNext;
   };
 
   const handleBack = () => {
@@ -148,7 +224,7 @@ function Signup() {
           <div className={styles.secretMsg}>
             입력하신 정보는 저희만 알고 있을게요 :)
           </div>
-          <SecondSignupForm />
+          <SecondSignupForm userInfo={userInfo} dispatch={dispatch} />
         </>
       )}
 
@@ -158,7 +234,7 @@ function Signup() {
           <div className={styles.secretMsg}>
             입력하신 정보는 저희만 알고 있을게요 :)
           </div>
-          <SecondSignupForm />
+          <SecondSignupForm userInfo={userInfo} dispatch={dispatch} />
         </>
       )}
 
@@ -195,10 +271,10 @@ function Signup() {
               </button>
             )}
             <button
+              onClick={buttonHandler()}
               className={
                 currentStep === 1 ? styles.firstNextBtn : styles.nextBtn
               }
-              onClick={handleNext}
             >
               다음
             </button>
