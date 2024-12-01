@@ -3,9 +3,11 @@ import coffeeIcon from "@/assets/image/Login/coffeeIcon.png";
 import { Coffee } from "lucide-react/";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { loginAPI } from "@/api/authAPI";
 
 function LoginPage() {
+  const nav = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [activeOption, setActiveOption] = useState(null);
@@ -18,6 +20,7 @@ function LoginPage() {
 
   const handleLogin = () => {
     loginAPI(username, password);
+    nav("/");
   };
 
   return (

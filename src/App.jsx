@@ -27,6 +27,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 /* react-cookie */
 import { CookiesProvider } from "react-cookie";
+import EditMypage from "@/page/EditMypage";
 
 const queryClient = new QueryClient();
 
@@ -41,7 +42,7 @@ function App() {
             <Route path="/cafeList" element={<CafeList />} />
             <Route path="/cafe/:id" element={<CafeDetail />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/mypage" element={<Mypage />} />
+            <Route path="/mypage" element={<EditMypage />} />
             <Route path="/distance" element={<DistanceCafeList />} />
             <Route path="/rank" element={<Rank />} />
             <Route path="/login" element={<Login />} />
