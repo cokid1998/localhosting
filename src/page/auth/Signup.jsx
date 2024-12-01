@@ -8,6 +8,7 @@ import SecondSignupForm from "@/components/Signup/SecondSignupForm.jsx";
 import ThirdSignupForm from "@/components/Signup/ThirdSignupForm.jsx";
 import SuccessSignupForm from "@/components/Signup/SuccessSignupForm.jsx";
 import { signUpAPI } from "@/api/authAPI";
+import { setCookie } from "@/util/cookies";
 
 function ThreeDot() {
   return (
@@ -119,7 +120,10 @@ function Signup() {
     delete payload.domain;
 
     setCurrentStep(currentStep + 1);
-    await signUpAPI(payload);
+    const res = await signUpAPI(payload);
+
+    setCookie("access_token", res.data.accessToken, { path: "/" });
+    setCookie("refresh_token", res.data.refreshToken, { path: "/" });
   };
 
   const buttonHandler = () => {
