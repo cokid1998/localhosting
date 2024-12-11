@@ -27,10 +27,10 @@ function CafeDetail() {
         queryFn: () => getOneCafe(id),
         enabled: !!id,
       },
-      // {
-      //   queryKey: ["review"],
-      //   queryFn: getReview,
-      // },
+      {
+        queryKey: ["review"],
+        queryFn: getReview,
+      },
     ],
   });
   const isLoading = queries.some((query) => query.isLoading);
@@ -214,56 +214,7 @@ CafeDetail.Review = ({ data }) => {
   };
   return (
     <>
-      {[
-        {
-          reviewId: 1,
-          user: null,
-          keyword: "SERVICE_GOOD",
-          createdAt: "2024-11-01T00:00:00",
-          rcontent: "츄러스가 바삭하고 맛있었지만 음료가 다소 평범했어요.",
-          rimage: [],
-        },
-        {
-          reviewId: 2,
-          user: null,
-          keyword: "CLEAN",
-          createdAt: "2024-11-03T00:00:00",
-          rcontent: "카페 분위기가 좋아서 친구들과 재밌게 시간을 보냈습니다.",
-          rimage: [],
-        },
-        {
-          reviewId: 3,
-          user: null,
-          keyword: "TASTE_BAD",
-          createdAt: "2024-11-05T00:00:00",
-          rcontent: "주차 공간이 협소해 불편함이 있었어요.",
-          rimage: [],
-        },
-        {
-          reviewId: 4,
-          user: null,
-          keyword: "DIRTY",
-          createdAt: "2024-10-15T00:00:00",
-          rcontent: "국밥이 뜨겁고 깊은 맛이 나서 좋았습니다.",
-          rimage: [],
-        },
-        {
-          reviewId: 5,
-          user: null,
-          keyword: "TASTE_GOOD",
-          createdAt: "2024-10-20T00:00:00",
-          rcontent: "식당이 너무 붐벼서 조용히 식사하기 어려웠습니다.",
-          rimage: [],
-        },
-        {
-          reviewId: 6,
-          user: null,
-          keyword: "SERVICE_BAD",
-          createdAt: "2024-11-01T00:00:00",
-          rcontent: "친절한 서비스 덕분에 기분 좋은 식사를 할 수 있었습니다.",
-          rimage: [],
-        },
-      ].map((item) => {
+      {data.data.data.map((item) => {
         return (
           <div
             key={item.reviewId}
