@@ -3,6 +3,7 @@ import Layout from "@/components/Layout/Layout";
 import Main from "@/page/Main";
 import CafeList from "@/page/CafeList";
 import Mypage from "@/page/Mypage";
+import EditMypage from "@/page/EditMypage";
 import DistanceCafeList from "@/page/DistanceCafeList";
 import Rank from "@/components/Main/Rank";
 import CafeDetail from "@/page/CafeDetail";
@@ -27,7 +28,6 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 /* react-cookie */
 import { CookiesProvider } from "react-cookie";
-import EditMypage from "@/page/EditMypage";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +43,7 @@ function App() {
             <Route path="/cafe/:id" element={<CafeDetail />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/mypage" element={<EditMypage />} />
+            <Route path="/mypage-cafe" element={<Mypage />} />
             <Route path="/distance" element={<DistanceCafeList />} />
             <Route path="/rank" element={<Rank />} />
             <Route path="/login" element={<Login />} />
