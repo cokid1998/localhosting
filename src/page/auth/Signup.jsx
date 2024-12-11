@@ -118,6 +118,12 @@ function Signup() {
       email: `${userInfo.email}@${userInfo.domain}`,
     };
     delete payload.domain;
+    if (selectedType === "customer") {
+      delete payload.businessNumber;
+      delete payload.bankAccount;
+      delete payload.openingDate;
+      delete payload.bName;
+    }
 
     setCurrentStep(currentStep + 1);
     const res = await signUpAPI(payload);
