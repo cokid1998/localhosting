@@ -13,8 +13,10 @@ import Distance from "@/components/Main/Distance";
 import AllCafeList from "@/components/Main/AllCafeList";
 import { getAllCafe } from "@/api/cafeAPI";
 import { useQuery } from "@tanstack/react-query";
+import { getCookie, removeCookie } from "@/util/cookies";
 
 function Main() {
+  const role = getCookie("role");
   const [carouselControl, setCarouselControl] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -36,13 +38,36 @@ function Main() {
     });
   }, [carouselControl]);
 
+  const logoutHandler = () => {
+    removeCookie("accessToken");
+    removeCookie("refreshToken");
+    removeCookie("role");
+    window.location.reload();
+  };
+
   if (isLoading) return null;
 
   return (
     <div className="flex flex-col items-center">
-      <Link to={"/"} className="my-[16px] font-medium text-[16px]">
-        Localhosting
-      </Link>
+      <div className="my-[16px] font-medium text-[16px] relative w-full flex justify-center">
+        <Link to={"/"}>Localhosting</Link>
+
+        {role ? (
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-4">
+            <Link to={role === "customer" ? "/mypage" : "/mypage-owner"}>
+              Mypage
+            </Link>
+            <button onClick={logoutHandler}>Logout</button>
+          </div>
+        ) : (
+          <Link
+            to="/login"
+            className="absolute right-2 top-1/2 -translate-y-1/2"
+          >
+            Login
+          </Link>
+        )}
+      </div>
 
       <div className="w-full">
         <Carousel

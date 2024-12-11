@@ -6,7 +6,11 @@ export const loginAPI = async (id, password) => {
     username: id,
     password,
   });
+
   setCookie("role", res.data.role);
+  setCookie("accessToken", res.data.accessToken);
+  setCookie("refreshToken", res.data.refreshToken);
+  window.location.reload();
   return res;
 };
 
