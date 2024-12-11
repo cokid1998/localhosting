@@ -19,8 +19,19 @@ function LoginPage() {
   };
 
   const handleLogin = () => {
-    loginAPI(username, password);
-    nav("/");
+    try {
+      loginAPI(username, password);
+      nav("/");
+    } catch (error) {
+      window.alert(error);
+      console.log("asdf");
+    }
+  };
+
+  const inputOnclick = (e) => {
+    if (e.keyCode === 13) {
+      handleLogin();
+    }
   };
 
   return (
@@ -67,6 +78,7 @@ function LoginPage() {
           className={styles.loginInput}
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          onKeyDown={inputOnclick}
         />
         <input
           type="password"
@@ -74,6 +86,7 @@ function LoginPage() {
           className={styles.loginInput}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={inputOnclick}
         />
         <button className={styles.loginButton} onClick={handleLogin}>
           로그인
