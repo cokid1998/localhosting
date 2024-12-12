@@ -44,7 +44,7 @@ function LoginPage() {
           alt="커피 구독 일러스트레이션"
           className={styles.image}
         />
-        <div className={styles.loginOptions}>
+        {/* <div className={styles.loginOptions}>
           <button
             className={styles.loginOption}
             onClick={() => handleOptionClick("general")}
@@ -71,7 +71,7 @@ function LoginPage() {
             />{" "}
             사장님 로그인
           </button>
-        </div>
+        </div> */}
         <input
           type="text"
           placeholder="아이디를 입력해 주세요"
