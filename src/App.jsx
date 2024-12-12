@@ -42,8 +42,8 @@ function App() {
             <Route path="/cafeList" element={<CafeList />} />
             <Route path="/cafe/:id" element={<CafeDetail />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/mypage" element={<EditMypage />} />
-            <Route path="/mypage-cafe" element={<Mypage />} />
+            <Route path="/mypage" element={<Mypage />} />
+            {/* <Route path="/mypage-cafe" element={<Mypage />} /> */}
             <Route path="/distance" element={<DistanceCafeList />} />
             <Route path="/rank" element={<Rank />} />
             <Route path="/login" element={<Login />} />

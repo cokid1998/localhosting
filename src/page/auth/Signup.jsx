@@ -20,7 +20,15 @@ function ThreeDot() {
   );
 }
 
-const UserCard = ({ type, title, description, image, onClick, selected }) => {
+const UserCard = ({
+  type,
+  title,
+  description,
+  image,
+  onClick,
+  selected,
+  styles,
+}) => {
   return (
     <button className={styles.cardContainer} onClick={onClick}>
       <div

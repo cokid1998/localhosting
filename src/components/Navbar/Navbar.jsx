@@ -40,7 +40,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed bottom-[10px] left-1/2 -translate-x-1/2 flex gap-[10px] flex-col items-center">
+    <div className="fixed bottom-[10px] left-1/2 -translate-x-1/2 flex gap-[10px] flex-col items-center z-50">
       <Tabs
         defaultValue={TabData[0].title}
         className=""
