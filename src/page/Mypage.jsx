@@ -3,8 +3,9 @@ import styles1 from "@/styles/auth/Signup.module.css";
 import { useState } from "react";
 import { Images } from "lucide-react";
 import ownerImage from "@/components/img/사장님.png";
+import { Link } from "react-router-dom";
 
-const Card = ({ type, title, description, image, onClick, selected }) => {
+const Card = ({ type, title, description, onClick, selected }) => {
   return (
     <button
       className={styles1.cardContainer}
@@ -34,6 +35,61 @@ const Card = ({ type, title, description, image, onClick, selected }) => {
         <div className={styles1.cardText}>
           <p className={styles1.cardTextDescription}>{description}</p>
           <p className={styles1.cardTextType}>{type}</p>
+        </div>
+      </div>
+    </button>
+  );
+};
+
+const Card2 = ({ type, title, description, onClick, selected }) => {
+  return (
+    <button
+      className={styles1.cardContainer}
+      onClick={onClick}
+      style={{
+        margin: 0,
+      }}
+    >
+      <div
+        className={`${styles1.cardHeader} ${
+          selected ? styles1.headerSelected : ""
+        }`}
+        style={{
+          backgroundColor: "#ff7f48",
+          color: "black",
+        }}
+      >
+        {title}
+      </div>
+      <div
+        className={`${styles1.cardContent} ${selected ? styles1.selected : ""}`}
+        style={{
+          borderColor: "#ff7f48",
+        }}
+      >
+        <div className="rounded-[14px] w-[75px] h-[75px] bg-[#ededed]" />
+        <div
+          className={styles1.cardText}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "4px",
+            flex: "1",
+          }}
+        >
+          <p
+            className={styles1.cardTextDescription}
+            style={{ color: "black", fontSize: "13px" }}
+          >
+            사용 일자
+          </p>
+          <p className={styles1.cardTextDescription}>{description}</p>
+          <Link
+            to={"/review"}
+            className="w-full bg-[#ff7f48] rounded-[28px] flex justify-center items-center py-[4px] text-white"
+          >
+            리뷰 작성하기
+          </Link>
         </div>
       </div>
     </button>
@@ -95,24 +151,24 @@ function Mypage() {
                 zIndex: 0,
               }}
             >
-              <Card
+              <Card2
                 type="쿠폰 사용횟수 : 0회"
-                title="카페 이름"
-                description="아이스 아메리카노"
+                title="사용일자"
+                description="사용 일자 24.00.00"
                 image={ownerImage}
                 className
               />
-              <Card
+              <Card2
                 type="쿠폰 사용횟수 : 0회"
-                title="카페 이름"
-                description="아이스 아메리카노"
+                title="사용일자"
+                description="사용 일자 24.00.00"
                 image={ownerImage}
                 className
               />
-              <Card
+              <Card2
                 type="쿠폰 사용횟수 : 0회"
-                title="카페 이름"
-                description="아이스 아메리카노"
+                title="사용일자"
+                description="사용 일자 24.00.00"
                 image={ownerImage}
                 className
               />

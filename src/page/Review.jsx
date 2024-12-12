@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "@/styles/Review.module.css";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, Images } from "lucide-react";
+import { postReview } from "@/api/review";
 
 function Review() {
   const [rating, setRating] = useState(0);
@@ -11,6 +12,7 @@ function Review() {
     서비스: "",
     위생: "",
   });
+  const [text, setText] = useState("");
   const navigate = useNavigate();
 
   const handleRatingClick = (index) => {
@@ -40,6 +42,12 @@ function Review() {
         return [];
     }
   };
+
+  const handleSubmit = () => {
+    postReview(text);
+  };
+
+  console.log(text);
 
   return (
     <div className={styles.reviewContainer}>
@@ -102,6 +110,8 @@ function Review() {
           <textarea
             placeholder="리뷰 내용을 입력해 주세요!"
             className={styles.reviewTextarea}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
           ></textarea>
         </section>
 
@@ -112,7 +122,9 @@ function Review() {
           </div>
         </section>
 
-        <button className={styles.submitButton}>리뷰 등록</button>
+        <button className={styles.submitButton} onClick={handleSubmit}>
+          리뷰 등록
+        </button>
       </div>
     </div>
   );
